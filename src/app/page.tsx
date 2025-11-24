@@ -8,8 +8,8 @@ const Home = () => {
         <Image
           src="/christmasLogo.png"
           alt="Christmas Logo"
-          width={800}
-          height={800}
+          width={500}
+          height={500}
         />
         <div className="flex flex-col items-center gap-5 sm:flex-row sm:gap-10 text-2xl text-outline font-semibold justify-center mb-8">
           <Link href="/panic-room">검은방</Link>
