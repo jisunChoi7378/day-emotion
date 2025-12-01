@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Calendar from "@/components/common/Calendar";
 import Header from "@/components/common/Header";
+import CalenderContent from "@/components/common/CalenderContent";
 
 const BuriedStars = () => {
   return (
@@ -18,7 +21,9 @@ const BuriedStars = () => {
         <Link href="/city-of-mist">회색도시</Link>
         <div className="text-[#b7d3cf] text-outline-mint">베스타</div>
       </Header>
-      <Calendar />
+      <Calendar>
+        <CalenderContent color="bg-[#f7d1d1]" />
+      </Calendar>
     </div>
   );
 };
