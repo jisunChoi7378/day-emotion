@@ -3,7 +3,7 @@ interface CalenderContentProps {
   color: string;
 }
 
-const CalenderContent = ({children, color}: CalenderContentProps) => {
+const CalenderContent = ({ children, color }: CalenderContentProps) => {
   const openCalendarContent = () => {
     console.log("Calendar Content Clicked");
   };

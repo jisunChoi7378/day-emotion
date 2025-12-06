@@ -1,5 +1,7 @@
+import What_fxx from "@/components/Work/panicRoom/what_fxx";
+
 const PanicRoom = () => {
-  return <div>검은방 페이지</div>;
+  return <What_fxx />;
 };
 
 export default PanicRoom;

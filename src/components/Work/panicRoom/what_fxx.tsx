@@ -1,4 +1,4 @@
-const what_fxx = () => {
+const What_fxx = () => {
   return (
     <p>
       천천히, 정말 천천히 눈이 내리고 있었다.
@@ -473,4 +473,4 @@ const what_fxx = () => {
   );
 };
 
-export default what_fxx;
+export default What_fxx;

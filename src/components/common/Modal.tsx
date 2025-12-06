@@ -1,4 +1,4 @@
-import {useOpenProfileModalStore} from "@/store/modal";
+import { useOpenProfileModalStore } from "@/store/modal";
 
 interface ProfileData {
   children: React.ReactNode;
@@ -6,8 +6,8 @@ interface ProfileData {
   backgroundClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const Modal = ({children, className, backgroundClick}: ProfileData) => {
-  const {isOpen, close} = useOpenProfileModalStore();
+const Modal = ({ children, className, backgroundClick }: ProfileData) => {
+  const { isOpen, close } = useOpenProfileModalStore();
 
   const handleClose = () => {
     close();
