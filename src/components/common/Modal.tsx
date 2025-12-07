@@ -1,4 +1,4 @@
-import { useOpenProfileModalStore } from "@/store/modal";
+import {useOpenProfileModalStore} from "@/store/modal";
 
 interface ProfileData {
   children: React.ReactNode;
@@ -6,8 +6,8 @@ interface ProfileData {
   backgroundClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const Modal = ({ children, className, backgroundClick }: ProfileData) => {
-  const { isOpen, close } = useOpenProfileModalStore();
+const Modal = ({className, backgroundClick}: ProfileData) => {
+  const {isOpen, close, setWork} = useOpenProfileModalStore();
 
   const handleClose = () => {
     close();
@@ -15,14 +15,17 @@ const Modal = ({ children, className, backgroundClick }: ProfileData) => {
 
   return (
     <div
-      className={`absolute z-50 flex h-full w-screen items-start justify-center overflow-scroll bg-[#00000051] ${isOpen ? "" : "hidden"}`}
+      className={`fixed z-50 inset-0 flex items-center justify-center bg-[#00000051] ${isOpen ? "" : "hidden"}`}
       onClick={backgroundClick ? backgroundClick : handleClose}
     >
       <div
-        className={`bg-white ${className}`}
+        className={`bg-[#979797] ${className} cursor-default overflow-auto h-full md:max-h-[90vh] w-full md:max-w-[70%]`}
         onClick={(e) => e.stopPropagation()}
       >
-        {children}
+        <div className="md:hidden" onClick={handleClose}>
+          X
+        </div>
+        {setWork}
       </div>
     </div>
   );
