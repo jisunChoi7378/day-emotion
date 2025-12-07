@@ -4,7 +4,7 @@ interface CalendarProps {
   genreName?: string;
 }
 
-const Calendar = ({children, className, genreName}: CalendarProps) => {
+const Calendar = ({ children, className, genreName }: CalendarProps) => {
   return (
     <div
       className={`m-5 p-5 rounded-lg shadow-md flex flex-col justify-center items-center ${className ?? "bg-[#f5a4a4]"}`}

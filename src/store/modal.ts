@@ -1,4 +1,4 @@
-import {create} from "zustand";
+import { create } from "zustand";
 
 export interface OpenProfileModalStore {
   isOpen: boolean;
@@ -11,7 +11,7 @@ export const useOpenProfileModalStore = create<OpenProfileModalStore>(
   (set) => ({
     isOpen: false,
     setWork: null,
-    open: (work) => set({isOpen: true, setWork: work}),
-    close: () => set({isOpen: false}),
-  })
+    open: (work) => set({ isOpen: true, setWork: work }),
+    close: () => set({ isOpen: false }),
+  }),
 );

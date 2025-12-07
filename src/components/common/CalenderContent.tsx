@@ -1,4 +1,4 @@
-import {useOpenProfileModalStore} from "@/store/modal";
+import { useOpenProfileModalStore } from "@/store/modal";
 
 interface CalenderContentProps {
   children?: React.ReactNode;
@@ -6,8 +6,12 @@ interface CalenderContentProps {
   work?: React.ReactNode;
 }
 
-const CalenderContent = ({children, className, work}: CalenderContentProps) => {
-  const {open} = useOpenProfileModalStore();
+const CalenderContent = ({
+  children,
+  className,
+  work,
+}: CalenderContentProps) => {
+  const { open } = useOpenProfileModalStore();
   const openCalendarContent = (e: React.MouseEvent<HTMLDivElement>) => {
     open(work);
     e.stopPropagation();
