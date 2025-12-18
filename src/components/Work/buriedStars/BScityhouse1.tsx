@@ -1,4 +1,4 @@
-const BScityhouse = () => {
+const BScityhouse1 = () => {
   return (
     <p>
       평소와는 사뭇 다른 찬기에 눈꺼풀을 떴다. 아무렇게나 널려있는 물건. 방 안에
@@ -186,4 +186,4 @@ const BScityhouse = () => {
   );
 };
 
-export default BScityhouse;
+export default BScityhouse1;

@@ -3,10 +3,12 @@
 import Calendar from "@/components/common/Calendar";
 import CalenderContent from "@/components/common/CalenderContent";
 import Modal from "@/components/common/Modal";
-import BScityhouse from "@/components/Work/buriedStars/BScityhouse";
+import BScityhouse1 from "@/components/Work/buriedStars/BScityhouse1";
 import What_fxx from "@/components/Work/panicRoom/what_fxx";
+import BScityhouse2 from "@/components/Work/buriedStars/BScityhouse2";
 import Image from "next/image";
 import Link from "next/link";
+import N1GHT_AND_D4WN from "@/components/Work/panicRoom/N1GHT_AND_D4WN";
 
 const Home = () => {
   return (
@@ -27,13 +29,17 @@ const Home = () => {
           <CalenderContent className="bg-gray-700" work={<What_fxx />}>
             이수님
           </CalenderContent>
+          <CalenderContent work={<N1GHT_AND_D4WN />}>새벽님</CalenderContent>
         </Calendar>
         <Calendar genreName="회색도시">
           <CalenderContent>회색도시</CalenderContent>
         </Calendar>
         <Calendar genreName="베스타">
-          <CalenderContent className="bg-[#7adccaf]" work={<BScityhouse />}>
+          <CalenderContent className="bg-[#7adccaf]" work={<BScityhouse1 />}>
             옥님
+          </CalenderContent>
+          <CalenderContent work={<BScityhouse2 />}>
+            옥님-주영인하
           </CalenderContent>
         </Calendar>
         <Calendar genreName="크오">
