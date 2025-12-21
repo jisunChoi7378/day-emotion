@@ -110,7 +110,6 @@ const What_fxx = () => {
       <br />
       <span className="block text-center">***</span>
       <br />
-      <br />
       병동에 캐럴이 울렸다.
       <br />
       병실 문마다 작은 트리 장식.
@@ -180,8 +179,8 @@ const What_fxx = () => {
       <br />
       교회 종소리가 멀리서 울렸다.
       <br />
-      <span className="block text-center">***</span>
       <br />
+      <span className="block text-center">***</span>
       <br />
       수혁은 병원 밖으로 나오는 순간, 숨을 몰아쉬었다.
       <br />
@@ -259,7 +258,6 @@ const What_fxx = () => {
       <br />
       <br />
       <span className="block text-center">***</span>
-      <br />
       <br />
       크리스마스 아침.
       <br />
@@ -364,7 +362,6 @@ const What_fxx = () => {
       <br />
       <br />
       <span className="block text-center">***</span>
-      <br />
       <br />
       눈이 그친 다음의 도시는, 마치 모든 죄가 씻겨 내려갔다는 듯 조용하다.
       <br />
