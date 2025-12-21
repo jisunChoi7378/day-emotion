@@ -14,6 +14,9 @@ import HA_RUT_ from "@/components/Work/cityOfMist/HA_RUT_";
 import N1GHT_AND_D4WN from "@/components/Work/panicRoom/N1GHT_AND_D4WN";
 import ID174x140 from "@/components/Work/buriedStars/178x140";
 import BS_dica from "@/components/Work/buriedStars/BS_dica";
+import PNICK_ORPG from "@/components/Work/cityOfMist/PNICK_ORPG";
+import NeNggeul1 from "@/components/Work/panicRoom/ne__nggeul1";
+import NeNggeul2 from "@/components/Work/cityOfMist/ne__nggeul2";
 
 const Home = () => {
   return (
@@ -35,9 +38,13 @@ const Home = () => {
             이수님
           </CalenderContent>
           <CalenderContent work={<N1GHT_AND_D4WN />}>새벽님</CalenderContent>
+          <CalenderContent work={<NeNggeul1 />}>넹글님-수혁수연</CalenderContent>
         </Calendar>
         <Calendar genreName="회색도시">
+          <CalenderContent work={<NeNggeul2 />}>넹글님-누아재인</CalenderContent>
+          <CalenderContent work={<PNICK_ORPG />}>피닉스님</CalenderContent>
           <CalenderContent work={<HA_RUT_ />}>하룻님</CalenderContent>
+
         </Calendar>
         <Calendar genreName="베스타">
           <CalenderContent className="bg-[#7adccaf]" work={<BScityhouse1 />}>

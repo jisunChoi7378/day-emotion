@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Serif_KR, Dongle } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const noto = Noto_Serif_KR({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-work",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dongle = Dongle({
   subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-dongle",
 });
 
 export const metadata: Metadata = {
@@ -23,12 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="ko" className={`${noto.variable} ${dongle.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
