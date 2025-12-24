@@ -1,0 +1,212 @@
+/* Postscript (후기) page - envelope and modal styles */
+
+/* wrapper to reserve space above the envelope so flipped flap is visible */
+.envelope-wrapper {
+  display: inline-block;
+  padding-top: 48px;
+}
+
+.envelope {
+  position: relative;
+  width: 160px;
+  height: 120px;
+  margin: 0 auto;
+  perspective: 1000px;
+  overflow: visible;
+}
+
+.envelope-body {
+  position: absolute;
+  inset: 20px 8px 12px 8px; /* top right bottom left */
+  background: linear-gradient(180deg, #fffef5 0%, #f0fbf2 100%);
+  border: 2px solid rgba(11, 59, 23, 0.14);
+  border-radius: 0 0 8px 8px; /* square top, rounded bottom */
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+/* flap wrapper holds the flap and the seal so the seal isn't clipped by clip-path */
+.flap-wrap {
+  position: absolute;
+  top: 20px; /* equal to envelope-body inset-top */
+  left: 8px; /* match envelope-body left inset */
+  right: 8px; /* match envelope-body right inset */
+  height: 56px;
+  transform-origin: 50% 0%;
+  z-index: 4;
+  transition:
+    transform 360ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    box-shadow 360ms ease;
+  transform-style: preserve-3d;
+  backface-visibility: visible; /* keep flap visible when rotated 180deg */
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #ff6b6b 0%, #b22222 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  width: 100%;
+  height: 100%;
+}
+
+.envelope-seal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15px; /* center of seal aligns with flap bottom */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffd27a 0%, #ffb74d 100%);
+  color: #7b2a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+  z-index: 5;
+  transition:
+    transform 360ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    opacity 360ms ease;
+  transform-origin: 50% 50%;
+}
+
+.flap-wrap.open {
+  transform: rotateX(-180deg);
+  box-shadow: none; /* hide shadow when open */
+  opacity: 1;
+}
+
+.flap-wrap.open .envelope-seal {
+  transform: translateX(-50%) rotateX(-180deg);
+  color: transparent; /* hide heart icon but keep seal shape */
+}
+
+/* letter slides up from bottom into view when envelope has .open (handled by JS adding class on envelope) */
+.letter {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 12px;
+  height: calc(100% - 40px);
+  background: #fffef5;
+  border-radius: 4px;
+  padding: 12px 12px;
+  transform: translateY(32px) scale(0.94); /* start smaller and lower */
+  transition:
+    transform 360ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    opacity 300ms ease;
+  z-index: 6; /* keep letter above flap when opening */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden; /* Prevent content overflow */
+  max-height: 100%; /* Ensure letter stays within envelope */
+}
+
+.envelope.open .letter {
+  transform: translateY(-4px) scale(1);
+  opacity: 1;
+}
+
+/* hover letter text styling */
+.letter-from {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b0f1a;
+}
+
+.letter-title {
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+
+/* small screens: slightly smaller envelope */
+@media (max-width: 640px) {
+  .envelope {
+    width: 130px;
+    height: 100px;
+  }
+  .envelope-body {
+    inset: 16px 6px 10px 6px;
+  }
+  .flap-wrap {
+    height: 40px;
+    top: 16px;
+    left: 6px;
+    right: 6px;
+  }
+  .letter {
+    bottom: 10px;
+    height: calc(100% - 36px);
+  }
+}
+
+/* Wider envelope on tablet and desktop to avoid overlap */
+@media (min-width: 768px) {
+  .envelope {
+    width: 200px;
+    height: 140px;
+  }
+  .envelope-body {
+    inset: 26px 12px 16px 12px;
+  }
+  .flap-wrap {
+    height: 70px;
+    top: 26px;
+    left: 12px;
+    right: 12px;
+  }
+  .letter {
+    bottom: 20px;
+  }
+}
+
+/* Modal paper aspect ratio and styling */
+.modal-paper {
+  width: 100%;
+}
+.modal-paper-bg {
+  width: 100%;
+  /* 3:2 ratio */
+  position: relative;
+  padding-top: 66.6667%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+.modal-paper-inner {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #111;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.2)
+  );
+  overflow: auto;
+}
+
+/* Taller paper on narrow screens */
+@media (max-width: 640px) {
+  .modal-paper-bg {
+    padding-top: 140%; /* make it vertical on small widths */
+  }
+  .modal-paper-inner {
+    padding: 16px;
+  }
+}

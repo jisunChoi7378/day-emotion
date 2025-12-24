@@ -13,7 +13,7 @@ import BScityhouse3 from "@/components/Work/buriedStars/BScityhouse3";
 import HA_RUT_ from "@/components/Work/cityOfMist/HA_RUT_";
 import N1GHT_AND_D4WN from "@/components/Work/panicRoom/N1GHT_AND_D4WN";
 import ID174x140 from "@/components/Work/buriedStars/178x140";
-import BS_dica from "@/components/Work/buriedStars/BS_dica";
+import BS_dica from "@/components/Work/crossover/BS_dica";
 import PNICK_ORPG from "@/components/Work/cityOfMist/PNICK_ORPG";
 import NeNggeul1 from "@/components/Work/panicRoom/ne__nggeul1";
 import NeNggeul2 from "@/components/Work/cityOfMist/ne__nggeul2";
@@ -69,10 +69,10 @@ const Home = () => {
             옥님-주영인하
           </CalenderContent>
           <CalenderContent work={<ID174x140 />}>치르노님</CalenderContent>
-          <CalenderContent work={<BS_dica />}>디카님</CalenderContent>
         </Calendar>
         <Calendar genreName="크오">
           <CalenderContent>크오</CalenderContent>
+          <CalenderContent work={<BS_dica />}>디카님</CalenderContent>
         </Calendar>
       </div>
       <Link href="/postscript">후기 페이지</Link>
