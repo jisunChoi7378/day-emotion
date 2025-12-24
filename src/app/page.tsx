@@ -38,13 +38,16 @@ const Home = () => {
             이수님
           </CalenderContent>
           <CalenderContent work={<N1GHT_AND_D4WN />}>새벽님</CalenderContent>
-          <CalenderContent work={<NeNggeul1 />}>넹글님-수혁수연</CalenderContent>
+          <CalenderContent work={<NeNggeul1 />}>
+            넹글님-수혁수연
+          </CalenderContent>
         </Calendar>
         <Calendar genreName="회색도시">
-          <CalenderContent work={<NeNggeul2 />}>넹글님-누아재인</CalenderContent>
+          <CalenderContent work={<NeNggeul2 />}>
+            넹글님-누아재인
+          </CalenderContent>
           <CalenderContent work={<PNICK_ORPG />}>피닉스님</CalenderContent>
           <CalenderContent work={<HA_RUT_ />}>하룻님</CalenderContent>
-
         </Calendar>
         <Calendar genreName="베스타">
           <CalenderContent className="bg-[#7adccaf]" work={<BScityhouse1 />}>
