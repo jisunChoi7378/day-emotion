@@ -1,12 +1,12 @@
 "use client";
 
-import './postscript.css';
+import "./postscript.css";
 
 import Link from "next/link";
 import React from "react";
 import Modal from "@/components/common/Modal";
-import EnvelopeButton from '@/components/common/EnvelopeButton';
-import { letters, type Letter } from './letters';
+import EnvelopeButton from "@/components/common/EnvelopeButton";
+import { letters, type Letter } from "./letters";
 import { useOpenProfileModalStore } from "@/store/modal";
 
 const PostscriptPage = () => {
@@ -22,9 +22,15 @@ const PostscriptPage = () => {
               style={{ backgroundImage: "url('/paper.jpg')" }}
             >
               <div className="modal-paper-inner">
-                <h2 className="text-xl font-semibold text-gray-900">from. {letter.author}</h2>
-                <div className="mt-1 text-sm text-gray-600">[{letter.title}]</div>
-                <div className="mt-4 whitespace-pre-wrap text-sm md:text-base">{letter.body}</div>
+                <h2 className="text-xl font-semibold text-gray-900">
+                  from. {letter.author}
+                </h2>
+                <div className="mt-1 text-sm text-gray-600">
+                  [{letter.title}]
+                </div>
+                <div className="mt-4 whitespace-pre-wrap text-sm md:text-base">
+                  {letter.body}
+                </div>
               </div>
             </div>
           </div>
@@ -56,7 +62,9 @@ const PostscriptPage = () => {
         </Link>
       </div>
 
-      <p className="text-sm text-gray-600 mb-4">산타의 선물에 보내온 답장을 열어볼까요?</p>
+      <p className="text-sm text-gray-600 mb-4">
+        산타의 선물에 보내온 답장을 열어볼까요?
+      </p>
 
       <div className="max-w-[min(1500px,85vw)] mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-12 lg:gap-16 justify-items-center">

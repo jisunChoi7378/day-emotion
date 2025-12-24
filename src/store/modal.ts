@@ -13,7 +13,8 @@ export const useOpenProfileModalStore = create<OpenProfileModalStore>(
     isOpen: false,
     setWork: null,
     modalClass: null,
-    open: (work, modalClass) => set({ isOpen: true, setWork: work, modalClass }),
+    open: (work, modalClass) =>
+      set({ isOpen: true, setWork: work, modalClass }),
     close: () => set({ isOpen: false, setWork: null, modalClass: null }),
   }),
 );

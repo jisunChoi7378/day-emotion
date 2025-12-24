@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState } from "react";
 
 interface Props {
   id: number;
@@ -10,11 +10,17 @@ interface Props {
   maxWidth?: number | string;
 }
 
-const EnvelopeButton = ({ id, author, title, onOpen, maxWidth = 160 }: Props) => {
+const EnvelopeButton = ({
+  id,
+  author,
+  title,
+  onOpen,
+  maxWidth = 160,
+}: Props) => {
   const [open, setOpen] = useState(false);
-  const tiltDeg = useMemo(() => Math.random() * 40 - 20, [id]);
+  const tiltDeg = useMemo(() => ((id * 13) % 41) - 20, [id]);
 
-  const handleToggle = (e: React.MouseEvent) => {
+  const handleToggle = (e: React.SyntheticEvent) => {
     e.stopPropagation();
     if (!open) {
       setOpen(true);
@@ -28,16 +34,20 @@ const EnvelopeButton = ({ id, author, title, onOpen, maxWidth = 160 }: Props) =>
   return (
     <div
       className="envelope-wrapper"
-      style={{ maxWidth, transform: `rotate(${tiltDeg}deg)`, transformOrigin: '50% 50%' }}
+      style={{
+        maxWidth,
+        transform: `rotate(${tiltDeg}deg)`,
+        transformOrigin: "50% 50%",
+      }}
     >
       <div
-        className={`envelope ${open ? 'open' : ''}`}
+        className={`envelope ${open ? "open" : ""}`}
         onMouseLeave={() => setOpen(false)}
         onMouseEnter={() => setOpen(true)}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
-          if (e.key === 'Enter') handleToggle(e as any);
+          if (e.key === "Enter") handleToggle(e);
         }}
       >
         <div
@@ -49,7 +59,7 @@ const EnvelopeButton = ({ id, author, title, onOpen, maxWidth = 160 }: Props) =>
         />
 
         <div
-          className={`flap-wrap ${open ? 'open' : ''}`}
+          className={`flap-wrap ${open ? "open" : ""}`}
           aria-label="envelope flap"
           onClick={handleToggle}
           role="button"

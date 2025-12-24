@@ -6,7 +6,7 @@
   --work-max-width: 62ch; /* 폭(문자 단위) */
   --work-padding: 2rem;
   --work-font: var(--font-work), serif;
-  --main-font: var(--font-dongle), 'Gowun Dodum', Arial, Helvetica, sans-serif;
+  --main-font: var(--font-dongle), "Gowun Dodum", Arial, Helvetica, sans-serif;
   --work-line-height: 1.8;
   --work-color: #222;
   --accent-red: #b22222;
@@ -46,13 +46,13 @@ body {
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--main-font);
-  font-size: 1.0rem;
+  font-size: 1rem;
   position: relative;
   height: 100vh;
 }
 
-
-.work-content, .work-article {
+.work-content,
+.work-article {
   max-width: min(62ch, 85vw);
   margin: 0 auto;
   padding: clamp(1rem, 4vw, 3rem);
@@ -66,41 +66,48 @@ body {
 }
 
 /* 소설 문단 */
-.work-content p, .work-article p {
-  text-indent: 1.0em;     /* 들여쓰기 */
-  margin: 0 0 1.1em 0;    /* 문단 간격 */
+.work-content p,
+.work-article p {
+  text-indent: 1em; /* 들여쓰기 */
+  margin: 0 0 1.1em 0; /* 문단 간격 */
   hyphens: auto;
 }
 
 /* 가운데 정렬이 필요한 요소(제목 등) */
-.work-content .center, .work-article .center {
+.work-content .center,
+.work-article .center {
   text-align: center;
 }
 
 /* 소제목 등 강조 */
-.work-content strong, .work-article strong {
+.work-content strong,
+.work-article strong {
   font-weight: 700;
 }
 
 /* 태블릿 및 데스크탑 조정 */
 @media (min-width: 640px) {
-  .work-content, .work-article {
+  .work-content,
+  .work-article {
     max-width: min(72ch, 75vw);
     font-size: 1.03rem;
   }
-  .work-content p, .work-article p {
+  .work-content p,
+  .work-article p {
     text-indent: 1.8em;
   }
 }
 
 @media (min-width: 1024px) {
-  .work-content, .work-article {
+  .work-content,
+  .work-article {
     max-width: 80ch; /* 데스크탑에서는 문자 기반 폭으로 고정 */
     font-size: 1.08rem;
     padding: clamp(1.5rem, 3vw, 4rem);
   }
-  .work-content p, .work-article p {
-    text-indent: 1.0em; /* 들여쓰기 */
+  .work-content p,
+  .work-article p {
+    text-indent: 1em; /* 들여쓰기 */
     margin-bottom: 1.25em;
   }
 }
@@ -171,7 +178,7 @@ body {
 .work-author,
 .work-content .work-author {
   font-size: clamp(0.75rem, 2.5vw, 0.9rem);
-  margin: 0.15rem 0.5rem 2.0rem 0;
+  margin: 0.15rem 0.5rem 2rem 0;
   color: var(--work-color);
   opacity: 0.85;
   text-align: right;
@@ -186,13 +193,13 @@ body {
   height: 12px;
 }
 *::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.06);
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 12px;
 }
 *::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--accent-red), var(--accent-green));
   border-radius: 999px;
-  border: 3px solid rgba(0,0,0,0);
+  border: 3px solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
 }
 *::-webkit-scrollbar-thumb:hover {
@@ -204,7 +211,7 @@ body {
 /* Firefox */
 html {
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-red) rgba(0,0,0,0.06);
+  scrollbar-color: var(--accent-red) rgba(0, 0, 0, 0.06);
 }
 
 /* Postscript-specific styles moved to src/app/postscript/postscript.css */
