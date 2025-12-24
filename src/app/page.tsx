@@ -1,12 +1,24 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import Calendar from "@/components/common/Calendar";
 import CalenderContent from "@/components/common/CalenderContent";
 import Modal from "@/components/common/Modal";
-import BScityhouse from "@/components/Work/buriedStars/BScityhouse";
+import BScityhouse1 from "@/components/Work/buriedStars/BScityhouse1";
 import What_fxx from "@/components/Work/panicRoom/what_fxx";
-import Image from "next/image";
-import Link from "next/link";
+import BScityhouse2 from "@/components/Work/buriedStars/BScityhouse2";
+import Bs_extinct from "@/components/Work/buriedStars/bs_extinct";
+import BScityhouse3 from "@/components/Work/buriedStars/BScityhouse3";
+import HA_RUT_ from "@/components/Work/cityOfMist/HA_RUT_";
+import N1GHT_AND_D4WN from "@/components/Work/panicRoom/N1GHT_AND_D4WN";
+import ID174x140 from "@/components/Work/buriedStars/178x140";
+import BS_dica from "@/components/Work/crossover/BS_dica";
+import PNICK_ORPG from "@/components/Work/cityOfMist/PNICK_ORPG";
+import NeNggeul1 from "@/components/Work/panicRoom/ne__nggeul1";
+import NeNggeul2 from "@/components/Work/cityOfMist/ne__nggeul2";
+import Chocobread_city2 from "@/components/Work/panicRoom/chocobread_city2";
+import Chocobread_city1 from "@/components/Work/panicRoom/chocobread_city1";
 
 const Home = () => {
   return (
@@ -27,17 +39,40 @@ const Home = () => {
           <CalenderContent className="bg-gray-700" work={<What_fxx />}>
             이수님
           </CalenderContent>
+          <CalenderContent work={<N1GHT_AND_D4WN />}>새벽님</CalenderContent>
+          <CalenderContent work={<NeNggeul1 />}>
+            넹글님-수혁수연
+          </CalenderContent>
+          <CalenderContent work={<Chocobread_city2 />}>
+            깁미깁미님-수혁수연
+          </CalenderContent>
+          <CalenderContent work={<Chocobread_city1 />}>
+            깁미깁미님-승범지은
+          </CalenderContent>
         </Calendar>
         <Calendar genreName="회색도시">
-          <CalenderContent>회색도시</CalenderContent>
+          <CalenderContent work={<NeNggeul2 />}>
+            넹글님-누아재인
+          </CalenderContent>
+          <CalenderContent work={<PNICK_ORPG />}>피닉스님</CalenderContent>
+          <CalenderContent work={<HA_RUT_ />}>하룻님</CalenderContent>
         </Calendar>
         <Calendar genreName="베스타">
-          <CalenderContent className="bg-[#7adccaf]" work={<BScityhouse />}>
-            옥님
+          <CalenderContent className="bg-[#7adccaf]" work={<BScityhouse1 />}>
+            옥님-민주영 가족
           </CalenderContent>
+          <CalenderContent work={<BScityhouse2 />}>
+            옥님-주영연하
+          </CalenderContent>
+          <CalenderContent work={<Bs_extinct />}>멸종님</CalenderContent>
+          <CalenderContent work={<BScityhouse3 />}>
+            옥님-주영인하
+          </CalenderContent>
+          <CalenderContent work={<ID174x140 />}>치르노님</CalenderContent>
         </Calendar>
         <Calendar genreName="크오">
           <CalenderContent>크오</CalenderContent>
+          <CalenderContent work={<BS_dica />}>디카님</CalenderContent>
         </Calendar>
       </div>
       <Link href="/postscript">후기 페이지</Link>

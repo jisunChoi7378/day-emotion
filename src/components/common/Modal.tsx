@@ -1,13 +1,13 @@
 import { useOpenProfileModalStore } from "@/store/modal";
 
 interface ProfileData {
-  children: React.ReactNode;
   className?: string;
   backgroundClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  children?: React.ReactNode;
 }
 
-const Modal = ({ className, backgroundClick }: ProfileData) => {
-  const { isOpen, close, setWork } = useOpenProfileModalStore();
+const Modal = ({ className, backgroundClick, children }: ProfileData) => {
+  const { isOpen, close, setWork, modalClass } = useOpenProfileModalStore();
 
   const handleClose = () => {
     close();
@@ -19,13 +19,13 @@ const Modal = ({ className, backgroundClick }: ProfileData) => {
       onClick={backgroundClick ? backgroundClick : handleClose}
     >
       <div
-        className={`bg-[#979797] ${className} cursor-default overflow-auto h-full md:max-h-[90vh] w-full md:max-w-[70%]`}
+        className={`${modalClass && modalClass.includes("no-modal-bg") ? "" : "bg-[#979797]"} ${modalClass ?? className ?? ""} cursor-default overflow-auto h-full md:max-h-[90vh] w-full md:max-w-[70%]`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="md:hidden" onClick={handleClose}>
           X
         </div>
-        {setWork}
+        {setWork ?? children ?? null}
       </div>
     </div>
   );

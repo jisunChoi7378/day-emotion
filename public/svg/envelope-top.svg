@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="224" viewBox="0 0 320 224" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="g-top" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f3e9d6" />
+      <stop offset="100%" stop-color="#e8d7c1" />
+    </linearGradient>
+    <filter id="top-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- flap polygon -->
+  <g filter="url(#top-shadow)">
+    <path d="M16 56 L304 56 L160 184 L16 56 Z" fill="url(#g-top)" stroke="#e2cdb6" stroke-width="1" />
+    <!-- crease across top -->
+    <path d="M24 64 L296 64" stroke="#efe6d8" stroke-width="1" opacity="0.9" />
+  </g>
+
+  <!-- slight highlight on flap center -->
+  <path d="M96 86 C128 40, 192 40, 224 86" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="6" opacity="0.35" />
+</svg>

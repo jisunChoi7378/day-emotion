@@ -3,6 +3,14 @@
 :root {
   --background: url("../../public/christmasBg.png");
   --foreground: #ffffff;
+  --work-max-width: 62ch; /* 폭(문자 단위) */
+  --work-padding: 2rem;
+  --work-font: var(--font-work), serif;
+  --main-font: var(--font-dongle), "Gowun Dodum", Arial, Helvetica, sans-serif;
+  --work-line-height: 1.8;
+  --work-color: #222;
+  --accent-red: #b22222;
+  --accent-green: #0b3b17;
 }
 
 @theme inline {
@@ -37,7 +45,173 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--main-font);
+  font-size: 1rem;
   position: relative;
   height: 100vh;
 }
+
+.work-content,
+.work-article {
+  max-width: min(62ch, 85vw);
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 3rem);
+  font-family: var(--work-font);
+  line-height: var(--work-line-height);
+  color: var(--work-color);
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: transparent;
+}
+
+/* 소설 문단 */
+.work-content p,
+.work-article p {
+  text-indent: 1em; /* 들여쓰기 */
+  margin: 0 0 1.1em 0; /* 문단 간격 */
+  hyphens: auto;
+}
+
+/* 가운데 정렬이 필요한 요소(제목 등) */
+.work-content .center,
+.work-article .center {
+  text-align: center;
+}
+
+/* 소제목 등 강조 */
+.work-content strong,
+.work-article strong {
+  font-weight: 700;
+}
+
+/* 태블릿 및 데스크탑 조정 */
+@media (min-width: 640px) {
+  .work-content,
+  .work-article {
+    max-width: min(72ch, 75vw);
+    font-size: 1.03rem;
+  }
+  .work-content p,
+  .work-article p {
+    text-indent: 1.8em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-content,
+  .work-article {
+    max-width: 80ch; /* 데스크탑에서는 문자 기반 폭으로 고정 */
+    font-size: 1.08rem;
+    padding: clamp(1.5rem, 3vw, 4rem);
+  }
+  .work-content p,
+  .work-article p {
+    text-indent: 1em; /* 들여쓰기 */
+    margin-bottom: 1.25em;
+  }
+}
+
+/* 예비 소설(텍스트)과 그림(이미지)용 클래스 */
+.work-novel {
+  /* 소설 작품용 */
+}
+
+.work-art {
+  /* 그림 작품용 */
+  display: block;
+  text-align: center;
+}
+
+.work-art img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.work-art figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--work-color);
+}
+
+/* 소설 작품 제목 스타일 */
+.work-novel h1,
+.work-content.work-novel h1 {
+  font-size: clamp(1.4rem, 6vw, 2.4rem);
+  margin: clamp(0.8rem, 4vw, 2rem) 0;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+  color: var(--work-color);
+}
+
+.work-novel h1.center {
+  text-align: center;
+}
+
+/* 등장인물(타이틀 상단) */
+.work-character,
+.work-content .work-character {
+  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  margin: 0 0 0.08rem 0;
+  font-weight: 600;
+  color: var(--work-color);
+  opacity: 0.95;
+}
+
+.work-character.center {
+  text-align: center;
+}
+
+.work-header {
+  margin-top: clamp(1rem, 4vw, 2rem);
+}
+
+.work-header .work-title {
+  margin-top: 0.05rem;
+  margin-bottom: clamp(0.6rem, 2vw, 1rem);
+}
+
+/* 작가명 */
+.work-author,
+.work-content .work-author {
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+  margin: 0.15rem 0.5rem 2rem 0;
+  color: var(--work-color);
+  opacity: 0.85;
+  text-align: right;
+  font-style: italic;
+}
+
+/* 스크롤바 색상변경 */
+/* Uses --accent-red and --accent-green defined in :root */
+/* Chromium-based browsers */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-red), var(--accent-green));
+  border-radius: 999px;
+  border: 3px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.92);
+}
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-red) rgba(0, 0, 0, 0.06);
+}
+
+/* Postscript-specific styles moved to src/app/postscript/postscript.css */
