@@ -17,6 +17,8 @@ import BS_dica from "@/components/Work/buriedStars/BS_dica";
 import PNICK_ORPG from "@/components/Work/cityOfMist/PNICK_ORPG";
 import NeNggeul1 from "@/components/Work/panicRoom/ne__nggeul1";
 import NeNggeul2 from "@/components/Work/cityOfMist/ne__nggeul2";
+import Chocobread_city2 from "@/components/Work/panicRoom/chocobread_city2";
+import Chocobread_city1 from "@/components/Work/panicRoom/chocobread_city1";
 
 const Home = () => {
   return (
@@ -40,6 +42,12 @@ const Home = () => {
           <CalenderContent work={<N1GHT_AND_D4WN />}>새벽님</CalenderContent>
           <CalenderContent work={<NeNggeul1 />}>
             넹글님-수혁수연
+          </CalenderContent>
+          <CalenderContent work={<Chocobread_city2 />}>
+            깁미깁미님-수혁수연
+          </CalenderContent>
+          <CalenderContent work={<Chocobread_city1 />}>
+            깁미깁미님-승범지은
           </CalenderContent>
         </Calendar>
         <Calendar genreName="회색도시">
