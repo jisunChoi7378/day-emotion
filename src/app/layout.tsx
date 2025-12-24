@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Serif_KR, Dongle } from "next/font/google";
+import { Noto_Serif_KR, Gowun_Dodum } from "next/font/google";
 import "./globals.css";
 
 const noto = Noto_Serif_KR({
@@ -8,7 +8,7 @@ const noto = Noto_Serif_KR({
   variable: "--font-work",
 });
 
-const dongle = Dongle({
+const gowun = Gowun_Dodum({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-dongle",
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${noto.variable} ${dongle.variable}`}>
+    <html lang="ko" className={`${noto.variable} ${gowun.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -6,7 +6,7 @@
   --work-max-width: 62ch; /* 폭(문자 단위) */
   --work-padding: 2rem;
   --work-font: var(--font-work), serif;
-  --main-font: var(--font-dongle), 'Dongle', Arial, Helvetica, sans-serif;
+  --main-font: var(--font-dongle), 'Gowun Dodum', Arial, Helvetica, sans-serif;
   --work-line-height: 1.8;
   --work-color: #222;
   --accent-red: #b22222;
@@ -46,7 +46,7 @@ body {
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--main-font);
-  font-size: 1.5rem;   /* Dongle font가 너무 작아서 1.5로 키웠는데 폰트 변경하면 여기도 수정 */
+  font-size: 1.0rem;
   position: relative;
   height: 100vh;
 }
@@ -206,3 +206,5 @@ html {
   scrollbar-width: thin;
   scrollbar-color: var(--accent-red) rgba(0,0,0,0.06);
 }
+
+/* Postscript-specific styles moved to src/app/postscript/postscript.css */

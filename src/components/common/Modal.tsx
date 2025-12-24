@@ -7,7 +7,7 @@ interface ProfileData {
 }
 
 const Modal = ({ className, backgroundClick }: ProfileData) => {
-  const { isOpen, close, setWork } = useOpenProfileModalStore();
+  const { isOpen, close, setWork, modalClass } = useOpenProfileModalStore();
 
   const handleClose = () => {
     close();
@@ -19,7 +19,7 @@ const Modal = ({ className, backgroundClick }: ProfileData) => {
       onClick={backgroundClick ? backgroundClick : handleClose}
     >
       <div
-        className={`bg-[#979797] ${className} cursor-default overflow-auto h-full md:max-h-[90vh] w-full md:max-w-[70%]`}
+        className={`${modalClass && modalClass.includes("no-modal-bg") ? "" : "bg-[#979797]"} ${modalClass ?? className ?? ""} cursor-default overflow-auto h-full md:max-h-[90vh] w-full md:max-w-[70%]`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="md:hidden" onClick={handleClose}>
