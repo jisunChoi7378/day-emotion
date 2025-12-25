@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const BS_0224 = () => {
+const Wksek_cm = () => {
   const [character, setCharacter] = useState("허상은 여강휘");
 
   useEffect(() => {
@@ -50,4 +50,4 @@ const BS_0224 = () => {
   );
 };
 
-export default BS_0224;
+export default Wksek_cm;

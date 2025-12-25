@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const SR_D_BS2 = () => {
+const Stellaofastra = () => {
   return (
     <article className="work-content work-novel">
       <header className="work-header">
@@ -21,4 +21,4 @@ const SR_D_BS2 = () => {
   );
 };
 
-export default SR_D_BS2;
+export default Stellaofastra;

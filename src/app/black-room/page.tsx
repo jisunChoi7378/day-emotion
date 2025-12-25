@@ -9,6 +9,7 @@ import N1GHT_AND_D4WN from "@/components/Work/panicRoom/N1GHT_AND_D4WN";
 import NeNggeul1 from "@/components/Work/panicRoom/ne__nggeul1";
 import Chocobread_city2 from "@/components/Work/panicRoom/chocobread_city2";
 import Chocobread_city1 from "@/components/Work/panicRoom/chocobread_city1";
+import Wksek_cm from "@/components/Work/panicRoom/wksek_cm";
 
 const BlackRoomPage = () => {
   return (
@@ -26,6 +27,7 @@ const BlackRoomPage = () => {
         <CalenderContent work={<Chocobread_city1 />}>
           깁미깁미님-승범지은
         </CalenderContent>
+        <CalenderContent work={<Wksek_cm />}>잔다님</CalenderContent>
       </Calendar>
       <Link href="/main" className="text-blue-600 hover:underline">
         메인으로 돌아가기

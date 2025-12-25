@@ -3,7 +3,6 @@
 import "./postscript.css";
 
 import Link from "next/link";
-import React from "react";
 import Modal from "@/components/common/Modal";
 import EnvelopeButton from "@/components/common/EnvelopeButton";
 import { letters, type Letter } from "./letters";
