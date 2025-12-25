@@ -1,14 +1,13 @@
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const BS_0224 = () => {
   const [character, setCharacter] = useState("허상은 여강휘");
-  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     // 모달의 스크롤 컨테이너 찾기
     const scrollContainer = document.querySelector(
-      ".overflow-auto"
+      ".overflow-auto",
     ) as HTMLElement;
 
     if (!scrollContainer) {
@@ -18,15 +17,13 @@ const BS_0224 = () => {
 
     const handleScroll = () => {
       const currentScrollY = scrollContainer.scrollTop; // ✅ scrollTop 사용
-      console.log("모달 스크롤:", currentScrollY); // 디버깅용
-      setScrollY(currentScrollY);
 
       if (currentScrollY > 100) {
         setCharacter("하은성, 하무열");
       }
     };
 
-    scrollContainer.addEventListener("scroll", handleScroll, {passive: true});
+    scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
