@@ -33,19 +33,63 @@ const dialogues = [
   {
     speaker: "",
     text: "고개를 들자, 조그만 문이 눈앞에 들어온다.\n이곳을 나가 선물을 전해줘야 한다.",
-    showSanta: true,
+    showSanta: false,
+    heroImage: {
+      src: "/main_door.png",
+      alt: "작은 문",
+      width: 240,
+      height: 300,
+      className: "drop-shadow-lg absolute bottom-24 left-1/2 -translate-x-1/2",
+    },
   },
   {
     speaker: "",
     text: "그 앞에는 각각 색깔이 다른 열쇠가 놓여 있다.\n목적지에 맞는 열쇠를 사용해야 나갈 수 있을 것 같다.",
     showSanta: true,
+    heroImage: {
+      src: "/main_door.png",
+      alt: "작은 문",
+      width: 240,
+      height: 300,
+      className: "drop-shadow-lg absolute bottom-24 left-1/2 -translate-x-1/2",
+    },
   },
   {
     speaker: "",
-    text: "문 앞에 조그마한 종이가 붙어 있다.\n[검회베 스포일러 주의!]",
-    showSanta: true,
+    text: "문 앞에 조그마한 종이가 붙어 있다.\n메모를 자세히 살펴보았다.",
+    showSanta: false,
+    heroImage: {
+      src: "/main_door.png",
+      alt: "작은 문",
+      width: 240,
+      height: 300,
+      className: "drop-shadow-lg absolute bottom-24 left-1/2 -translate-x-1/2",
+    },
   },
-  { speaker: "", text: "…이상한 소리다.", showSanta: true },
+  {
+    speaker: "",
+    text: "[검회베 스포일러 주의!]",
+    showSanta: false,
+    heroImage: {
+      src: "/illsut_memo.png",
+      alt: "메모",
+      width: 230,
+      height: 190,
+      className: "drop-shadow-lg absolute bottom-28 left-1/2 -translate-x-1/2",
+    },
+  },
+  {
+    speaker: "",
+    text: "…이상한 소리다.",
+    showSanta: false,
+    heroImage: {
+      src: "/illsut_memo.png",
+      alt: "메모",
+      width: 230,
+      height: 190,
+      className: "drop-shadow-lg absolute bottom-28 left-1/2 -translate-x-1/2",
+    },
+  },
 ];
 
 const IntroPage = () => {
@@ -78,8 +122,22 @@ const IntroPage = () => {
   };
 
   const currentDialogue = dialogues[dialogueIndex];
-  const showSanta = currentDialogue.showSanta;
+  const heroImage = currentDialogue.heroImage;
+  const showSanta = currentDialogue.showSanta && !heroImage;
   const showMainBackground = dialogueIndex >= 3;
+
+  const renderWithHighlight = (text: string) => {
+    const target = "목적지에 맞는 열쇠";
+    const idx = text.indexOf(target);
+    if (idx === -1) return text;
+    return (
+      <>
+        {text.slice(0, idx)}
+        <span className="text-[#ffd166] font-semibold">{target}</span>
+        {text.slice(idx + target.length)}
+      </>
+    );
+  };
 
   return (
     <div
@@ -94,6 +152,16 @@ const IntroPage = () => {
             height={320}
             priority
             className="drop-shadow-lg absolute bottom-0 left-[70%] -translate-x-1/2"
+          />
+        )}
+        {heroImage && (
+          <Image
+            src={heroImage.src}
+            alt={heroImage.alt}
+            width={heroImage.width}
+            height={heroImage.height}
+            priority
+            className={heroImage.className}
           />
         )}
       </div>
@@ -113,7 +181,7 @@ const IntroPage = () => {
           </span>
         )}
         <div className="text-base leading-relaxed whitespace-pre-line flex-1 overflow-y-auto pr-1">
-          {displayText}
+          {renderWithHighlight(displayText)}
         </div>
         <div className="pt-2 text-right text-xs text-white/60">탭하여 다음</div>
       </div>
