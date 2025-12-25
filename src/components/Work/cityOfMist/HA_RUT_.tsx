@@ -2,7 +2,9 @@ const HA_RUT_ = () => {
   return (
     <article className="work-content work-novel">
       <header className="work-header">
-        <h2 className="work-character center">생존조</h2>
+        <h2 className="work-character center">
+          서재호, 오미정, 권혜연, 양시백, 홍설희
+        </h2>
         <h1 className="work-title center">구멍</h1>
         <div className="work-author">written by. 하룻</div>
       </header>

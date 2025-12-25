@@ -45,7 +45,7 @@ const Modal = forwardRef<HTMLDivElement, ProfileData>(
               ref.current = node;
             }
           }}
-          className={`${modalClass && modalClass.includes("no-modal-bg") ? "" : "bg-[#979797]"} ${modalClass ?? className ?? ""} cursor-default overflow-auto h-full md:max-h-[90vh] w-full md:max-w-[70%]`}
+          className={`${modalClass && modalClass.includes("no-modal-bg") ? "" : "work-modal-bg"} ${modalClass ?? className ?? ""} cursor-default overflow-auto h-full md:max-h-[90vh] w-full md:max-w-[70%]`}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="md:hidden" onClick={handleClose}>

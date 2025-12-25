@@ -13,13 +13,26 @@
   margin: 0 auto;
   perspective: 1000px;
   overflow: visible;
+  /* default palette (will be overridden per-envelope via CSS variables) */
+  --env-body-top: #fffef5;
+  --env-body-bottom: #f0fbf2;
+  --env-body-border: rgba(11, 59, 23, 0.14);
+  --env-flap-top: #ff6b6b;
+  --env-flap-bottom: #b22222;
+  --env-seal-top: #ffd27a;
+  --env-seal-bottom: #ffb74d;
+  --env-seal-text: #7b2a00;
 }
 
 .envelope-body {
   position: absolute;
   inset: 20px 8px 12px 8px; /* top right bottom left */
-  background: linear-gradient(180deg, #fffef5 0%, #f0fbf2 100%);
-  border: 2px solid rgba(11, 59, 23, 0.14);
+  background: linear-gradient(
+    180deg,
+    var(--env-body-top) 0%,
+    var(--env-body-bottom) 100%
+  );
+  border: 2px solid var(--env-body-border);
   border-radius: 0 0 8px 8px; /* square top, rounded bottom */
   box-shadow:
     0 8px 18px rgba(0, 0, 0, 0.08),
@@ -46,7 +59,11 @@
 .envelope-flap {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #ff6b6b 0%, #b22222 100%);
+  background: linear-gradient(
+    180deg,
+    var(--env-flap-top) 0%,
+    var(--env-flap-bottom) 100%
+  );
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   width: 100%;
   height: 100%;
@@ -60,8 +77,12 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #ffd27a 0%, #ffb74d 100%);
-  color: #7b2a00;
+  background: linear-gradient(
+    180deg,
+    var(--env-seal-top) 0%,
+    var(--env-seal-bottom) 100%
+  );
+  color: var(--env-seal-text);
   display: flex;
   align-items: center;
   justify-content: center;
