@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Rett0_0tter = () => {
+const Rett0_0tter1 = () => {
   return (
     <article className="work-content work-novel">
       <header className="work-header">
@@ -19,4 +19,4 @@ const Rett0_0tter = () => {
   );
 };
 
-export default Rett0_0tter;
+export default Rett0_0tter1;
