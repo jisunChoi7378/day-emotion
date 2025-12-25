@@ -6,7 +6,15 @@ const BScityhouse1 = () => {
         <h1 className="work-title center">선물</h1>
         <div className="work-author">written by. 옥</div>
       </header>
-
+      <div className="text-center mb-15">
+        <div className="center font-bold">-주의사항-</div>
+        <div>
+          *민주영이 삼남매라는 공식 정보 외 동생들의 이름과 성격은 모두
+          창작입니다. 감상에 참고 부탁드립니다.
+          <br />
+          *우울증에 대한 묘사가 담겨있습니다. 감상에 참고 부탁드립니다.
+        </div>
+      </div>
       <p>
         평소와는 사뭇 다른 찬기에 눈꺼풀을 떴다. 아무렇게나 널려있는 물건. 방
         안에 널려있는 과자로 요기를 채운 탓에 치우지 못한 부스러기가 바닥에

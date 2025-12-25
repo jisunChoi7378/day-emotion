@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
+
 import Calendar from "@/components/common/Calendar";
 import CalenderContent from "@/components/common/CalenderContent";
 import Modal from "@/components/common/Modal";
@@ -14,27 +15,69 @@ import SR_D_BS2 from "@/components/Work/cityOfMist/SR_D_BS2";
 import City_of_mist_q from "@/components/Work/cityOfMist/city_of_mist_q";
 
 const CityOfMistPage = () => {
+  const handleDoorClick = () => {
+    window.location.href = "/main";
+  };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 py-10">
       <Modal />
       <Calendar genreName="회색도시">
-        <CalenderContent work={<NeNggeul2 />}>넹글님-누아재인</CalenderContent>
-        <CalenderContent work={<PNICK_ORPG />}>피닉스님</CalenderContent>
-        <CalenderContent work={<HA_RUT_ />}>하룻님</CalenderContent>
-        <CalenderContent work={<Juwi_nww />}>주위님</CalenderContent>
-        <CalenderContent work={<Tangerine_gray />}>져린님</CalenderContent>
-        <CalenderContent work={<SR_D_BS1 />}>
-          꿈맛 시루떡님-회색도시1
+        <CalenderContent
+          work={<NeNggeul2 />}
+          id="NeNggeul2"
+          title="크리스마스에 선물은 오는가"
+        >
+          넹글님
         </CalenderContent>
-        <CalenderContent work={<SR_D_BS2 />}>
-          꿈맛 시루떡님-회색도시2
+        <CalenderContent
+          work={<PNICK_ORPG />}
+          id="PNICK_ORPG"
+          title="설희를 위한 크리스마스 대작전"
+        >
+          피닉스님
         </CalenderContent>
-
-        <CalenderContent work={<City_of_mist_q />}>큘님</CalenderContent>
+        <CalenderContent work={<HA_RUT_ />} id="HA_RUT_" title="구멍">
+          하룻님
+        </CalenderContent>
+        <CalenderContent work={<Juwi_nww />} id="Juwi_nww" title="기념 사진">
+          주위님
+        </CalenderContent>
+        <CalenderContent
+          work={<SR_D_BS1 />}
+          id="SR_D_BS1"
+          title="크리스마스의 기적(회도1)"
+        >
+          꿈맛시루떡님
+        </CalenderContent>
+        <CalenderContent
+          work={<SR_D_BS2 />}
+          id="SR_D_BS2"
+          title="크리스마스의 기적2(회도2)"
+        >
+          꿈맛시루떡님
+        </CalenderContent>
+        <CalenderContent
+          work={<Tangerine_gray />}
+          id="Tangerine_gray"
+          title="돌아갈 곳"
+        >
+          져린님
+        </CalenderContent>
+        <CalenderContent
+          work={<City_of_mist_q />}
+          id="City_of_mist_q"
+          title="크리스마스의 12가지 괴로움"
+        >
+          큘님
+        </CalenderContent>
       </Calendar>
-      <Link href="/main" className="text-blue-600 hover:underline">
-        메인으로 돌아가기
-      </Link>
+      <Image
+        src="/love_is_an_open_door.png"
+        alt="돌아가는 문"
+        width={150}
+        height={150}
+        onClick={handleDoorClick}
+      />
     </div>
   );
 };
