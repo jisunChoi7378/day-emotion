@@ -6,11 +6,11 @@ import Image from "next/image";
 
 import Modal from "@/components/common/Modal";
 import EnvelopeButton from "@/components/common/EnvelopeButton";
-import {letters, type Letter} from "./letters";
-import {useOpenProfileModalStore} from "@/store/modal";
+import { letters, type Letter } from "./letters";
+import { useOpenProfileModalStore } from "@/store/modal";
 
 const PostscriptPage = () => {
-  const {open, close} = useOpenProfileModalStore();
+  const { open, close } = useOpenProfileModalStore();
   const handleDoorClick = () => {
     window.location.href = "/main";
   };
@@ -19,10 +19,10 @@ const PostscriptPage = () => {
     const content = (
       <div className="p-6 text-gray-900">
         <div className="min-h-[90vh] sm:min-h-0 flex flex-col items-center justify-center">
-          <div className="modal-paper mx-auto" style={{maxWidth: 900}}>
+          <div className="modal-paper mx-auto" style={{ maxWidth: 900 }}>
             <div
               className="modal-paper-bg"
-              style={{backgroundImage: "url('/paper.jpg')"}}
+              style={{ backgroundImage: "url('/paper.jpg')" }}
             >
               <div className="modal-paper-inner">
                 <h2 className="text-xl font-semibold text-gray-900">

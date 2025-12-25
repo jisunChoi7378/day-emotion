@@ -1,4 +1,4 @@
-import {create} from "zustand";
+import { create } from "zustand";
 
 interface BoxState {
   [id: string]: boolean;
@@ -15,7 +15,7 @@ export const useBoxOpenStore = create<BoxOpenStore>((set, get) => ({
 
   openBox: (id: string) =>
     set((state) => ({
-      boxes: {...state.boxes, [id]: true},
+      boxes: { ...state.boxes, [id]: true },
     })),
 
   isBoxOpen: (id: string) => get().boxes[id] ?? false,

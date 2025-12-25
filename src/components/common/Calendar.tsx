@@ -3,7 +3,7 @@ interface CalendarProps {
   genreName?: string;
 }
 
-const Calendar = ({children, genreName}: CalendarProps) => {
+const Calendar = ({ children, genreName }: CalendarProps) => {
   return (
     <div className="m-5 p-5 flex flex-col justify-center items-center bg-[#ffffff55] rounded-lg shadow-lg">
       <div className="text-black">{genreName}</div>

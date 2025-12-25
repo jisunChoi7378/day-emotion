@@ -1,5 +1,5 @@
-import {useBoxOpenStore} from "@/store/boxOpen";
-import {useOpenProfileModalStore} from "@/store/modal";
+import { useBoxOpenStore } from "@/store/boxOpen";
+import { useOpenProfileModalStore } from "@/store/modal";
 import Image from "next/image";
 
 interface CalenderContentProps {
@@ -17,7 +17,7 @@ const CalenderContent = ({
   work,
   title,
 }: CalenderContentProps) => {
-  const {open} = useOpenProfileModalStore();
+  const { open } = useOpenProfileModalStore();
   const openBox = useBoxOpenStore((state) => state.openBox);
   const isBoxOpen = useBoxOpenStore((state) => state.isBoxOpen(id));
 

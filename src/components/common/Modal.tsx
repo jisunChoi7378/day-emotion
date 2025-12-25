@@ -1,5 +1,5 @@
-import {useOpenProfileModalStore} from "@/store/modal";
-import {forwardRef, useEffect, useRef} from "react";
+import { useOpenProfileModalStore } from "@/store/modal";
+import { forwardRef, useEffect, useRef } from "react";
 
 interface ProfileData {
   className?: string;
@@ -8,8 +8,8 @@ interface ProfileData {
 }
 
 const Modal = forwardRef<HTMLDivElement, ProfileData>(
-  ({className, backgroundClick, children}, ref) => {
-    const {isOpen, close, setWork, modalClass} = useOpenProfileModalStore();
+  ({ className, backgroundClick, children }, ref) => {
+    const { isOpen, close, setWork, modalClass } = useOpenProfileModalStore();
     const modalContentRef = useRef<HTMLDivElement>(null);
 
     const handleClose = () => {
@@ -55,7 +55,7 @@ const Modal = forwardRef<HTMLDivElement, ProfileData>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 Modal.displayName = "Modal";
