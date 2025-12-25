@@ -6,11 +6,11 @@ import Image from "next/image";
 
 import Modal from "@/components/common/Modal";
 import EnvelopeButton from "@/components/common/EnvelopeButton";
-import {letters, type Letter} from "./letters";
-import {useOpenProfileModalStore} from "@/store/modal";
+import { letters, type Letter } from "./letters";
+import { useOpenProfileModalStore } from "@/store/modal";
 
 const PostscriptPage = () => {
-  const {open} = useOpenProfileModalStore();
+  const { open } = useOpenProfileModalStore();
   const handleDoorClick = () => {
     window.location.href = "/main";
   };
@@ -19,10 +19,10 @@ const PostscriptPage = () => {
     const content = (
       <div className="p-6 text-gray-900">
         <div className="min-h-[90vh] sm:min-h-0 flex flex-col items-center justify-center">
-          <div className="modal-paper mx-auto" style={{maxWidth: 900}}>
+          <div className="modal-paper mx-auto" style={{ maxWidth: 900 }}>
             <div
               className="modal-paper-bg"
-              style={{backgroundImage: "url('/paper.jpg')"}}
+              style={{ backgroundImage: "url('/paper.jpg')" }}
             >
               <div className="modal-paper-inner">
                 <h2 className="text-xl font-semibold text-gray-900">
@@ -52,10 +52,14 @@ const PostscriptPage = () => {
       <Modal />
 
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-semibold">후기</h1>
+        <h1 className="text-2xl font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
+          후기
+        </h1>
       </div>
 
-      <p className="text-sm mb-4">산타의 선물에 보내온 답장을 열어볼까요?</p>
+      <p className="text-sm mb-4 drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
+        산타의 선물에 보내온 답장을 열어볼까요?
+      </p>
 
       <div className="max-w-[min(1500px,85vw)] mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 md:gap-25 justify-items-center">

@@ -17,30 +17,30 @@ const CrossoverPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 py-10">
       <Modal />
-      <Calendar genreName="크오">
+      <Calendar genreName="CROSSOVER">
         <CalenderContent
           work={<BS_dica />}
           id="BS_dica"
           title="하수연 동심 찾아주기 대작전"
         >
-          디카님
+          디카님 / 하남매&하무열
         </CalenderContent>
         <CalenderContent work={<Doansae />} id="Doansae" title="띵동">
-          한안세님
+          한안세님 / 김성식&장세일&서준용
         </CalenderContent>
         <CalenderContent
           work={<Malang_face />}
           id="Malang_face"
           title="내가이런뺑이를치게될줄이야"
         >
-          오꼬님
+          오꼬님 / 주인공조
         </CalenderContent>
         <CalenderContent
           work={<Stellaofastra />}
           id="Stellaofastra"
           title="비극을 든 산타클로스"
         >
-          이즈라크님
+          이즈라크님 / 양수연&권혜연&민주영
         </CalenderContent>
       </Calendar>
       <Image

@@ -5,7 +5,7 @@ const Rett0_0tter1 = () => {
     <article className="work-content work-art">
       <header className="work-header">
         <h2 className="work-character center">도윤인하</h2>
-        <h1 className="work-title center">(임시제목)</h1>
+        {/* 제목 없음  */}
         <div className="work-author">illust by. 수달박사</div>
       </header>
       <div className="flex justify-center">

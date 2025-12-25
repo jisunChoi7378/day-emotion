@@ -13,6 +13,7 @@ import Tangerine_gray from "@/components/Work/cityOfMist/tangerine_gray";
 import SR_D_BS1 from "@/components/Work/cityOfMist/SR_D_BS1";
 import SR_D_BS2 from "@/components/Work/cityOfMist/SR_D_BS2";
 import City_of_mist_q from "@/components/Work/cityOfMist/city_of_mist_q";
+import Sion_mist from "@/components/Work/cityOfMist/sion_mist";
 
 const CityOfMistPage = () => {
   const handleDoorClick = () => {
@@ -21,54 +22,61 @@ const CityOfMistPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 py-10">
       <Modal />
-      <Calendar genreName="회색도시">
+      <Calendar genreName="CITY OF MIST">
         <CalenderContent
           work={<NeNggeul2 />}
           id="NeNggeul2"
           title="크리스마스에 선물은 오는가"
         >
-          넹글님
+          넹글님 / 누아재인
         </CalenderContent>
         <CalenderContent
           work={<PNICK_ORPG />}
           id="PNICK_ORPG"
           title="설희를 위한 크리스마스 대작전"
         >
-          피닉스님
+          피닉스님 / 생존조
         </CalenderContent>
         <CalenderContent work={<HA_RUT_ />} id="HA_RUT_" title="구멍">
-          하룻님
+          하룻님 / 생존조
         </CalenderContent>
         <CalenderContent work={<Juwi_nww />} id="Juwi_nww" title="기념 사진">
-          주위님
+          주위님 / 양지조
         </CalenderContent>
         <CalenderContent
           work={<SR_D_BS1 />}
           id="SR_D_BS1"
-          title="크리스마스의 기적(회도1)"
+          title="크리스마스의 기적"
         >
-          꿈맛시루떡님
+          꿈맛시루떡님 / 회도1 ALL
         </CalenderContent>
         <CalenderContent
           work={<SR_D_BS2 />}
           id="SR_D_BS2"
-          title="크리스마스의 기적2(회도2)"
+          title="크리스마스의 기적 2"
         >
-          꿈맛시루떡님
+          꿈맛시루떡님 / 회도2 ALL
         </CalenderContent>
         <CalenderContent
           work={<Tangerine_gray />}
           id="Tangerine_gray"
           title="돌아갈 곳"
         >
-          져린님
+          져린님 / 양시백, 홍설희
         </CalenderContent>
         <CalenderContent
           work={<City_of_mist_q />}
           id="City_of_mist_q"
           title="크리스마스의 12가지 괴로움"
         >
-          큘님
+          큘님 / ALL
+        </CalenderContent>
+        <CalenderContent
+          work={<Sion_mist />}
+          id="Sion_mist"
+          title="어떤 화이트 크리스마스에는"
+        >
+          시온님 / 재호미정
         </CalenderContent>
       </Calendar>
       <Image

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, type CSSProperties } from "react";
+import React, { useEffect, useMemo, useState, type CSSProperties } from "react";
 
 interface Props {
   id: number;
@@ -36,16 +36,6 @@ const EnvelopeButton = ({ id, author, onOpen, maxWidth = 160 }: Props) => {
         sealText: "#7b2a00",
       },
       {
-        bodyTop: "#f4fff4",
-        bodyBottom: "#e0f6e8",
-        bodyBorder: "rgba(17, 94, 40, 0.24)",
-        flapTop: "#00b26b",
-        flapBottom: "#0b3b17",
-        sealTop: "#d4f9d0",
-        sealBottom: "#9de29c",
-        sealText: "#0f2f18",
-      },
-      {
         bodyTop: "#fffdf2",
         bodyBottom: "#f5ead4",
         bodyBorder: "rgba(176, 102, 0, 0.24)",
@@ -66,6 +56,16 @@ const EnvelopeButton = ({ id, author, onOpen, maxWidth = 160 }: Props) => {
         sealText: "#4d1a00",
       },
       {
+        bodyTop: "#eefaf1",
+        bodyBottom: "#d3eed9",
+        bodyBorder: "rgba(11, 59, 23, 0.3)",
+        flapTop: "#1f6b2f",
+        flapBottom: "#0b3b17",
+        sealTop: "#c7f1cf",
+        sealBottom: "#8dd7a1",
+        sealText: "#5a2d00",
+      },
+      {
         bodyTop: "#f2fff5",
         bodyBottom: "#ddf8e3",
         bodyBorder: "rgba(46, 125, 50, 0.24)",
@@ -76,6 +76,16 @@ const EnvelopeButton = ({ id, author, onOpen, maxWidth = 160 }: Props) => {
         sealText: "#1f4d23",
       },
       {
+        bodyTop: "#ffeeee",
+        bodyBottom: "#f9cccc",
+        bodyBorder: "rgba(153, 0, 0, 0.28)",
+        flapTop: "#cc0000",
+        flapBottom: "#7a0000",
+        sealTop: "#ffd7a3",
+        sealBottom: "#ffb066",
+        sealText: "#4d1a00",
+      },
+      {
         bodyTop: "#eefaf1",
         bodyBottom: "#d3eed9",
         bodyBorder: "rgba(11, 59, 23, 0.3)",
@@ -84,16 +94,6 @@ const EnvelopeButton = ({ id, author, onOpen, maxWidth = 160 }: Props) => {
         sealTop: "#c7f1cf",
         sealBottom: "#8dd7a1",
         sealText: "#0a2b14",
-      },
-      {
-        bodyTop: "#fff0f0",
-        bodyBottom: "#ffd3d3",
-        bodyBorder: "rgba(178, 34, 34, 0.28)",
-        flapTop: "#d7263d",
-        flapBottom: "#8b111f",
-        sealTop: "#ffe0a6",
-        sealBottom: "#ffb864",
-        sealText: "#4a1a12",
       },
       {
         bodyTop: "#f9fff7",
@@ -114,6 +114,16 @@ const EnvelopeButton = ({ id, author, onOpen, maxWidth = 160 }: Props) => {
         sealTop: "#ffdcb3",
         sealBottom: "#ffb97a",
         sealText: "#532112",
+      },
+      {
+        bodyTop: "#f4fff4",
+        bodyBottom: "#e0f6e8",
+        bodyBorder: "rgba(17, 94, 40, 0.24)",
+        flapTop: "#00b26b",
+        flapBottom: "#0b3b17",
+        sealTop: "#d4f9d0",
+        sealBottom: "#9de29c",
+        sealText: "#0f2f18",
       },
       {
         bodyTop: "#f3fff5",
@@ -145,20 +155,85 @@ const EnvelopeButton = ({ id, author, onOpen, maxWidth = 160 }: Props) => {
         sealBottom: "#a8e4bc",
         sealText: "#113523",
       },
+      {
+        bodyTop: "#fff6f3",
+        bodyBottom: "#ffdcd1",
+        bodyBorder: "rgba(196, 64, 32, 0.24)",
+        flapTop: "#e05a3c",
+        flapBottom: "#a4341c",
+        sealTop: "#ffe6c2",
+        sealBottom: "#ffbf7a",
+        sealText: "#51210f",
+      },
+      {
+        bodyTop: "#fffbf2",
+        bodyBottom: "#f5e8c8",
+        bodyBorder: "rgba(173, 120, 16, 0.24)",
+        flapTop: "#f2b128",
+        flapBottom: "#c27f0f",
+        sealTop: "#ffe9b3",
+        sealBottom: "#ffd170",
+        sealText: "#5c3b0c",
+      },
+      {
+        bodyTop: "#fff0ed",
+        bodyBottom: "#ffd1c8",
+        bodyBorder: "rgba(204, 51, 51, 0.26)",
+        flapTop: "#d64040",
+        flapBottom: "#932222",
+        sealTop: "#ffe2b8",
+        sealBottom: "#ffb87a",
+        sealText: "#4f1f12",
+      },
+      {
+        bodyTop: "#fffbf2",
+        bodyBottom: "#f5e8c8",
+        bodyBorder: "rgba(173, 120, 16, 0.24)",
+        flapTop: "#f2b128",
+        flapBottom: "#c27f0f",
+        sealTop: "#ffe9b3",
+        sealBottom: "#ffd170",
+        sealText: "#5c3b0c",
+      },
+      {
+        bodyTop: "#fff0ed",
+        bodyBottom: "#ffd1c8",
+        bodyBorder: "rgba(204, 51, 51, 0.26)",
+        flapTop: "#d64040",
+        flapBottom: "#932222",
+        sealTop: "#ffe2b8",
+        sealBottom: "#ffb87a",
+        sealText: "#4f1f12",
+      },
     ],
     [],
   );
 
   const randomProps = useMemo(() => {
     const rng = createRng(id * 0x9e3779b1 + 1337);
-    const paletteIndex = Math.floor(rng() * palettes.length);
-    const tiltDeg = (rng() - 0.5) * 48; // ~ -24deg to +24deg
-    return { paletteIndex, tiltDeg };
-  }, [id, palettes.length]);
+    const jitterY = Math.round((rng() - 0.5) * 36); // -18..18px vertical wobble
+    return { jitterY };
+  }, [id]);
+
+  const [paletteIndex, setPaletteIndex] = useState(() => {
+    const rng = createRng(id * 0x9e3779b1 + 1337);
+    return Math.floor(rng() * palettes.length);
+  });
+
+  const [tiltDeg, setTiltDeg] = useState(() => {
+    const rng = createRng(id * 0x9e3779b1 + 1337);
+    return (rng() - 0.5) * 20; // deterministic initial tilt
+  });
+
+  useEffect(() => {
+    // shuffle tilt on each page load (client-only) while keeping palette order stable
+    const tilt = (Math.random() - 0.5) * 20; // ~ -10deg to +10deg
+    setTiltDeg(tilt);
+  }, []);
 
   const palette = useMemo(
-    () => palettes[randomProps.paletteIndex],
-    [palettes, randomProps.paletteIndex],
+    () => palettes[paletteIndex],
+    [palettes, paletteIndex],
   );
 
   const paletteVars = useMemo(
@@ -179,6 +254,7 @@ const EnvelopeButton = ({ id, author, onOpen, maxWidth = 160 }: Props) => {
   const handleToggle = (e: React.SyntheticEvent) => {
     e.stopPropagation();
     if (!open) {
+      setPaletteIndex(Math.floor(Math.random() * palettes.length));
       setOpen(true);
     } else {
       // second click when open: open letter modal
@@ -192,7 +268,7 @@ const EnvelopeButton = ({ id, author, onOpen, maxWidth = 160 }: Props) => {
       className="envelope-wrapper"
       style={{
         maxWidth,
-        transform: `rotate(${randomProps.tiltDeg}deg)`,
+        transform: `translateY(${randomProps.jitterY}px) rotate(${tiltDeg}deg)`,
         transformOrigin: "50% 50%",
       }}
     >
