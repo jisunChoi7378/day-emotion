@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 const flakes = [
   { left: "5%", size: 6, opacity: 0.75, duration: 12, delay: 0, drift: 14 },
   { left: "12%", size: 5, opacity: 0.6, duration: 14, delay: 2, drift: -10 },
@@ -42,9 +44,13 @@ const Snow = () => {
             animationDuration: `${flake.duration}s`,
             animationDelay: `${flake.delay}s`,
             fontSize: flake.size * 3,
-            ["--drift-start" as const]: `${flake.drift * -0.5}px`,
-            ["--drift-mid" as const]: `${flake.drift}px`,
-            ["--drift-end" as const]: `${flake.drift * -0.4}px`,
+            "--drift-start": `${flake.drift * -0.5}px`,
+            "--drift-mid": `${flake.drift}px`,
+            "--drift-end": `${flake.drift * -0.4}px`,
+          } as CSSProperties & {
+            "--drift-start"?: string;
+            "--drift-mid"?: string;
+            "--drift-end"?: string;
           }}
         >
           ❅

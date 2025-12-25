@@ -30,7 +30,9 @@ const PostscriptPage = () => {
                 </div>
                 <div
                   className="mt-4 whitespace-pre-wrap text-sm md:text-base"
-                  dangerouslySetInnerHTML={{ __html: letter.body.replace(/\n/g, "<br/>") }}
+                  dangerouslySetInnerHTML={{
+                    __html: letter.body.replace(/\n/g, "<br/>"),
+                  }}
                 />
               </div>
             </div>

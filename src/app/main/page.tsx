@@ -32,7 +32,12 @@ const MainPage = () => {
             href={key.href}
             className="flex flex-col items-center gap-2 transition-transform hover:scale-105"
           >
-            <Image src={key.src} alt={`${key.label} 열쇠`} width={180} height={70} />
+            <Image
+              src={key.src}
+              alt={`${key.label} 열쇠`}
+              width={180}
+              height={70}
+            />
           </Link>
         ))}
       </div>

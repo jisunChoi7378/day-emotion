@@ -19,7 +19,11 @@ const dialogues = [
     showSanta: true,
   },
   { speaker: "", text: "탈출해야 한다.", showSanta: true },
-  { speaker: "", text: "정신 차리자.\n밀실에 잡혀가도 정신만 차리면 산다고 했다.", showSanta: true },
+  {
+    speaker: "",
+    text: "정신 차리자.\n밀실에 잡혀가도 정신만 차리면 산다고 했다.",
+    showSanta: true,
+  },
   {
     speaker: "",
     text: "손 안에 들린 건 커다란 선물 상자.\n그제야 오늘 해야만 하는 일이 떠오른다.",
