@@ -36,22 +36,24 @@ const Snow = () => {
         <span
           key={idx}
           className="snowflake"
-          style={{
-            left: flake.left,
-            width: flake.size,
-            height: flake.size,
-            opacity: flake.opacity,
-            animationDuration: `${flake.duration}s`,
-            animationDelay: `${flake.delay}s`,
-            fontSize: flake.size * 3,
-            "--drift-start": `${flake.drift * -0.5}px`,
-            "--drift-mid": `${flake.drift}px`,
-            "--drift-end": `${flake.drift * -0.4}px`,
-          } as CSSProperties & {
-            "--drift-start"?: string;
-            "--drift-mid"?: string;
-            "--drift-end"?: string;
-          }}
+          style={
+            {
+              left: flake.left,
+              width: flake.size,
+              height: flake.size,
+              opacity: flake.opacity,
+              animationDuration: `${flake.duration}s`,
+              animationDelay: `${flake.delay}s`,
+              fontSize: flake.size * 3,
+              "--drift-start": `${flake.drift * -0.5}px`,
+              "--drift-mid": `${flake.drift}px`,
+              "--drift-end": `${flake.drift * -0.4}px`,
+            } as CSSProperties & {
+              "--drift-start"?: string;
+              "--drift-mid"?: string;
+              "--drift-end"?: string;
+            }
+          }
         >
           ❅
         </span>

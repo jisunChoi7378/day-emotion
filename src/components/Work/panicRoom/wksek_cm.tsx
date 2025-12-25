@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const Wksek_cm = () => {
   const [character, setCharacter] = useState("허상은 여강휘");
@@ -7,7 +7,7 @@ const Wksek_cm = () => {
   useEffect(() => {
     // 모달의 스크롤 컨테이너 찾기
     const scrollContainer = document.querySelector(
-      ".overflow-auto"
+      ".overflow-auto",
     ) as HTMLElement;
 
     if (!scrollContainer) {
@@ -23,7 +23,7 @@ const Wksek_cm = () => {
       }
     };
 
-    scrollContainer.addEventListener("scroll", handleScroll, {passive: true});
+    scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
