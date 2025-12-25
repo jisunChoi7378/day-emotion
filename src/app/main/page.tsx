@@ -36,6 +36,12 @@ const MainPage = () => {
           </Link>
         ))}
       </div>
+      <Link
+        href="/postscript"
+        className="mt-4 rounded-lg bg-white/80 px-4 py-2 text-sm font-semibold text-slate-900 shadow hover:bg-white"
+      >
+        후기 페이지로 이동
+      </Link>
     </div>
   );
 };

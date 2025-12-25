@@ -55,8 +55,11 @@
   .snowflake {
     position: absolute;
     top: -10%;
-    background: radial-gradient(circle, #ffffff 40%, rgba(255, 255, 255, 0.6) 60%, transparent 70%);
-    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.65);
     animation-name: snow-fall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -64,13 +67,13 @@
 
   @keyframes snow-fall {
     0% {
-      transform: translate3d(-8px, -10vh, 0);
+      transform: translate3d(var(--drift-start, -6px), -10vh, 0);
     }
     50% {
-      transform: translate3d(10px, 50vh, 0);
+      transform: translate3d(var(--drift-mid, 8px), 50vh, 0);
     }
     100% {
-      transform: translate3d(-6px, 110vh, 0);
+      transform: translate3d(var(--drift-end, -4px), 110vh, 0);
     }
   }
 }
