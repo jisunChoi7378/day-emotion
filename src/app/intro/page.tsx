@@ -1,24 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import {useRouter} from "next/navigation";
+import {useEffect, useState} from "react";
 
 const dialogues = [
-  { speaker: "", text: "낯선 감각에 눈을 뜬다.", showSanta: false },
-  { speaker: "???", text: "어…?", showSanta: false },
+  {speaker: "", text: "낯선 감각에 눈을 뜬다.", showSanta: false},
+  {speaker: "???", text: "어…?", showSanta: false},
   {
     speaker: "",
     text: "새하얀 눈이 하늘을 가득 덮고 있다.\n차갑지만 이상할 정도로 보드라운 눈송이가 몸을 감싸오고,\n귓가엔 익숙한 캐롤이 들려온다.",
     showSanta: false,
   },
-  { speaker: "???", text: "여기는….", showSanta: true },
+  {speaker: "???", text: "여기는….", showSanta: true},
   {
     speaker: "",
     text: "낯선 풍경에 상황을 파악하려 머리를 굴린다.\n…목적지와 다른 곳에 와 버린 것만 같다.",
     showSanta: true,
   },
-  { speaker: "", text: "탈출해야 한다.", showSanta: true },
+  {speaker: "", text: "탈출해야 한다.", showSanta: true},
   {
     speaker: "",
     text: "정신 차리자.\n밀실에 잡혀가도 정신만 차리면 산다고 했다.",

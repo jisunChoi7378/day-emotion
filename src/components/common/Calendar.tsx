@@ -1,16 +1,13 @@
 interface CalendarProps {
   children: React.ReactNode;
-  className?: string;
   genreName?: string;
 }
 
-const Calendar = ({ children, className, genreName }: CalendarProps) => {
+const Calendar = ({children, genreName}: CalendarProps) => {
   return (
-    <div
-      className={`m-5 p-5 rounded-lg shadow-md flex flex-col justify-center items-center ${className ?? "bg-[#f5a4a4]"}`}
-    >
-      <div>{genreName}</div>
-      <div className="grid grid-cols-2 md:grid-cols-5 justify-center items-center">
+    <div className="m-5 p-5 flex flex-col justify-center items-center bg-[#ffffff55] rounded-lg shadow-lg">
+      <div className="text-black">{genreName}</div>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 justify-center items-center">
         {children}
       </div>
     </div>
