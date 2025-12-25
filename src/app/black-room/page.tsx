@@ -19,9 +19,7 @@ const BlackRoomPage = () => {
           이수님
         </CalenderContent>
         <CalenderContent work={<N1GHT_AND_D4WN />}>새벽님</CalenderContent>
-        <CalenderContent work={<NeNggeul1 />}>
-          넹글님-수혁수연
-        </CalenderContent>
+        <CalenderContent work={<NeNggeul1 />}>넹글님-수혁수연</CalenderContent>
         <CalenderContent work={<Chocobread_city2 />}>
           깁미깁미님-수혁수연
         </CalenderContent>

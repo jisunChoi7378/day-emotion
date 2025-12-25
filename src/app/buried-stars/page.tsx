@@ -18,13 +18,9 @@ const BuriedStarsPage = () => {
         <CalenderContent className="bg-[#7adccaf]" work={<BScityhouse1 />}>
           옥님-민주영 가족
         </CalenderContent>
-        <CalenderContent work={<BScityhouse2 />}>
-          옥님-주영연하
-        </CalenderContent>
+        <CalenderContent work={<BScityhouse2 />}>옥님-주영연하</CalenderContent>
         <CalenderContent work={<Bs_extinct />}>멸종님</CalenderContent>
-        <CalenderContent work={<BScityhouse3 />}>
-          옥님-주영인하
-        </CalenderContent>
+        <CalenderContent work={<BScityhouse3 />}>옥님-주영인하</CalenderContent>
         <CalenderContent work={<ID174x140 />}>치르노님</CalenderContent>
       </Calendar>
       <Link href="/main" className="text-blue-600 hover:underline">

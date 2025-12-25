@@ -13,9 +13,7 @@ const CityOfMistPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 py-10">
       <Modal />
       <Calendar genreName="회색도시">
-        <CalenderContent work={<NeNggeul2 />}>
-          넹글님-누아재인
-        </CalenderContent>
+        <CalenderContent work={<NeNggeul2 />}>넹글님-누아재인</CalenderContent>
         <CalenderContent work={<PNICK_ORPG />}>피닉스님</CalenderContent>
         <CalenderContent work={<HA_RUT_ />}>하룻님</CalenderContent>
       </Calendar>
