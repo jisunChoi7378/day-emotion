@@ -29,7 +29,7 @@ const BlackRoomPage = () => {
           깁미깁미님-승범지은
         </CalenderContent>
       </Calendar>
-      <Link href="/" className="text-blue-600 hover:underline">
+      <Link href="/main" className="text-blue-600 hover:underline">
         메인으로 돌아가기
       </Link>
     </div>

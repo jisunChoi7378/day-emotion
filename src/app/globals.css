@@ -36,6 +36,43 @@
       -1px 1px 0 #5a8d8c,
       1px 1px 0 #5a8d8c;
   }
+
+  .fade-in {
+    animation: fade-in 0.4s ease forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .snowflake {
+    position: absolute;
+    top: -10%;
+    background: radial-gradient(circle, #ffffff 40%, rgba(255, 255, 255, 0.6) 60%, transparent 70%);
+    border-radius: 9999px;
+    animation-name: snow-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes snow-fall {
+    0% {
+      transform: translate3d(-8px, -10vh, 0);
+    }
+    50% {
+      transform: translate3d(10px, 50vh, 0);
+    }
+    100% {
+      transform: translate3d(-6px, 110vh, 0);
+    }
+  }
 }
 
 body {

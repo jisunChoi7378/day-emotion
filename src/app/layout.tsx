@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Serif_KR, Gowun_Dodum } from "next/font/google";
+import Snow from "@/components/common/Snow";
 import "./globals.css";
 
 const noto = Noto_Serif_KR({
@@ -26,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${noto.variable} ${gowun.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Snow />
+        {children}
+      </body>
     </html>
   );
 }
