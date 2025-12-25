@@ -74,7 +74,6 @@ const PostscriptPage = () => {
               <EnvelopeButton
                 id={l.id}
                 author={l.author}
-                title={l.title}
                 onOpen={() => openLetter(l)}
                 maxWidth={160}
               />

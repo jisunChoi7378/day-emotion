@@ -164,10 +164,56 @@ body {
 }
 
 .work-art img {
-  max-width: 100%;
+  width: 100%;
+  max-width: min(95vw, 110rem);
   height: auto;
   display: block;
   margin: 0 auto;
+  border-radius: 0.75rem;
+}
+
+.video-embed {
+  width: 100%;
+  max-width: min(95vw, 110rem);
+  aspect-ratio: 16 / 9;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.work-art.work-content {
+  padding: clamp(0.5rem, 2vw, 1.6rem);
+}
+
+@media (min-width: 640px) {
+  .work-art img {
+    max-width: min(90vw, 96rem);
+  }
+
+  .video-embed {
+    max-width: min(90vw, 96rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-art img {
+    max-width: min(85vw, 90rem);
+  }
+
+  .video-embed {
+    max-width: min(85vw, 90rem);
+  }
+}
+
+@media (min-width: 1440px) {
+  .work-art img {
+    max-width: min(78vw, 96rem);
+  }
+
+  .video-embed {
+    max-width: min(78vw, 96rem);
+  }
 }
 
 .work-art figcaption {
@@ -176,15 +222,37 @@ body {
   color: var(--work-color);
 }
 
-/* 소설 작품 제목 스타일 */
+.work-content::after,
+.work-article::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: min(90vw, 270rem);
+  height: clamp(78px, 10.8vw, 162px);
+  margin: clamp(1.8rem, 4vw, 3rem) auto 0;
+  background: url("/divider_decorative_line_2x.png") center center/contain
+    no-repeat;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+}
+
+/* 소설/그림 작품 제목 스타일 */
 .work-novel h1,
-.work-content.work-novel h1 {
+.work-content.work-novel h1,
+.work-art h1,
+.work-content.work-art h1 {
   font-size: clamp(1.4rem, 6vw, 2.4rem);
   margin: clamp(0.8rem, 4vw, 2rem) 0;
   line-height: 1.15;
   letter-spacing: -0.01em;
   font-weight: 800;
   color: var(--work-color);
+}
+
+.work-title,
+.work-character,
+.work-author {
+  font-family: "Gowun Dodum", Arial, Helvetica, sans-serif;
 }
 
 .work-novel h1.center {
@@ -199,6 +267,7 @@ body {
   font-weight: 600;
   color: var(--work-color);
   opacity: 0.95;
+  display: block;
 }
 
 .work-character.center {
@@ -214,15 +283,89 @@ body {
   margin-bottom: clamp(0.6rem, 2vw, 1rem);
 }
 
+@media (min-width: 640px) {
+  .work-header::before,
+  .work-header::after {
+    width: 90vw;
+    max-width: 96rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-header::before,
+  .work-header::after {
+    width: 85vw;
+    max-width: 90rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .work-header::before,
+  .work-header::after {
+    width: 78vw;
+    max-width: 96rem;
+  }
+}
+
 /* 작가명 */
 .work-author,
 .work-content .work-author {
   font-size: clamp(0.75rem, 2.5vw, 0.9rem);
-  margin: 0.15rem 0.5rem 2rem 0;
+  margin: 0.15rem 0 2rem 0;
   color: var(--work-color);
   opacity: 0.85;
-  text-align: right;
+  text-align: center;
   font-style: italic;
+}
+
+.work-character::before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: min(90vw, 270rem);
+  height: clamp(78px, 10.8vw, 162px);
+  margin: clamp(0.6rem, 2vw, 1rem) auto clamp(0.35rem, 1.2vw, 0.9rem);
+  background: url("/divider_decorative_line2_2x.png") center center/contain
+    no-repeat;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+}
+
+.work-author::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: min(90vw, 270rem);
+  height: clamp(78px, 10.8vw, 162px);
+  margin: clamp(0.5rem, 1.6vw, 1rem) auto 0;
+  background: url("/divider_decorative_line2_2x.png") center center/contain
+    no-repeat;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+}
+
+@media (min-width: 640px) {
+  .work-character::before,
+  .work-author::after {
+    width: 100%;
+    max-width: min(85vw, 246rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-character::before,
+  .work-author::after {
+    width: 100%;
+    max-width: min(80vw, 228rem);
+  }
+}
+
+@media (min-width: 1440px) {
+  .work-character::before,
+  .work-author::after {
+    width: 100%;
+    max-width: min(72vw, 240rem);
+  }
 }
 
 /* 스크롤바 색상변경 */
@@ -243,7 +386,9 @@ body {
   background-clip: padding-box;
 }
 *::-webkit-scrollbar-thumb:hover {
-  filter: brightness(0.92);
+  background: linear-gradient(180deg, var(--accent-green), var(--accent-green));
+  border-color: rgba(255, 255, 255, 0.2);
+  filter: none;
 }
 *::-webkit-scrollbar-corner {
   background: transparent;
@@ -252,6 +397,16 @@ body {
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--accent-red) rgba(0, 0, 0, 0.06);
+}
+
+.work-modal-bg {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/work-bg.jpg") center/cover no-repeat;
+  color: #f8f8f8;
+  --work-color: #f8f8f8; /* let nested work content inherit the lighter text */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.4);
 }
 
 /* Postscript-specific styles moved to src/app/postscript/postscript.css */

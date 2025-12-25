@@ -31,10 +31,11 @@ const Wksek_cm = () => {
   }, []);
 
   return (
-    <article className="work-content work-novel">
+    <article className="work-content work-art">
       <header className="work-header">
         <h2 className="work-character center">{character}</h2>
-        <div className="work-author">written by. 잔다</div>
+        <h1 className="work-title center">첫 화이트 크리스마스</h1>
+        <div className="work-author">illust by. 잔다</div>
         <p className="text-xs center">스크롤 후 다시 돌아오세요.</p>
       </header>
       <div className="h-100 md:hidden" />
@@ -42,8 +43,9 @@ const Wksek_cm = () => {
         <Image
           src="/paintingWork/panicRoom/크리스마스합작_그림_잔다_하은성하무열_첫 화이트 크리스마스.png"
           alt="잔다님의 아름다운 하은성 하무열"
-          width={700}
-          height={700}
+          width={1200}
+          height={1200}
+          sizes="(max-width: 640px) 95vw, (max-width: 1024px) 92vw, (max-width: 1440px) 88vw, 88vw"
         />
       </div>
     </article>

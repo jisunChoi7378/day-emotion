@@ -6,7 +6,6 @@ import Calendar from "@/components/common/Calendar";
 import CalenderContent from "@/components/common/CalenderContent";
 import Modal from "@/components/common/Modal";
 import BS_dica from "@/components/Work/crossover/BS_dica";
-import City_of_mist_q from "@/components/Work/crossover/city_of_mist_q";
 import Doansae from "@/components/Work/crossover/doansae";
 import Malang_face from "@/components/Work/crossover/malang_face";
 import Stellaofastra from "@/components/Work/crossover/stellaofastra";
@@ -21,9 +20,6 @@ const CrossoverPage = () => {
       <Calendar genreName="크오">
         <CalenderContent work={<BS_dica />} id="BS_dica">
           디카님
-        </CalenderContent>
-        <CalenderContent work={<City_of_mist_q />} id="City_of_mist_q">
-          큘님
         </CalenderContent>
         <CalenderContent work={<Doansae />} id="Doansae">
           한안세님
