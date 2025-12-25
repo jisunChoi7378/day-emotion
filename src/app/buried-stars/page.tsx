@@ -26,45 +26,75 @@ const BuriedStarsPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 py-10">
       <Modal />
       <Calendar genreName="베스타">
+        <CalenderContent work={<BScityhouse1 />} id="BScityhouse1" title="선물">
+          옥님
+        </CalenderContent>
         <CalenderContent
-          className="bg-[#7adccaf]"
-          work={<BScityhouse1 />}
-          id="BScityhouse1"
+          work={<BScityhouse2 />}
+          id="BScityhouse2"
+          title="화이트 크리스마스"
         >
-          옥님-민주영 가족
+          옥님
         </CalenderContent>
-        <CalenderContent work={<BScityhouse2 />} id="BScityhouse2">
-          옥님-주영연하
-        </CalenderContent>
-        <CalenderContent work={<Bs_extinct />} id="Bs_extinct">
+        <CalenderContent
+          work={<Bs_extinct />}
+          id="Bs_extinct"
+          title="메리 화이트 크리스마스"
+        >
           멸종님
         </CalenderContent>
-        <CalenderContent work={<BScityhouse3 />} id="BScityhouse3">
-          옥님-주영인하
+        <CalenderContent
+          work={<BScityhouse3 />}
+          id="BScityhouse3"
+          title="완벽하지 않은"
+        >
+          옥님
         </CalenderContent>
-        <CalenderContent work={<ID174x140 />} id="ID174x140">
+        <CalenderContent work={<ID174x140 />} id="ID174x140" title="출발">
           치르노님
         </CalenderContent>
-        <CalenderContent work={<ID520graceyc />} id="ID520graceyc">
+        <CalenderContent
+          work={<ID520graceyc />}
+          id="ID520graceyc"
+          title="메리크리스마스!"
+        >
           수봄님
         </CalenderContent>
-        <CalenderContent work={<BS_0224 />} id="BS_0224">
+        <CalenderContent work={<BS_0224 />} id="BS_0224" title="선물">
           온점님
         </CalenderContent>
-        <CalenderContent work={<Hello_9r_ />} id="Hello_9r_">
+        <CalenderContent
+          work={<Hello_9r_ />}
+          id="Hello_9r_"
+          title="다시 만난 무대"
+        >
           로아님
         </CalenderContent>
-        <CalenderContent work={<NO_wawa__ />} id="NO_wawa__">
+        <CalenderContent
+          work={<NO_wawa__ />}
+          id="NO_wawa__"
+          title="네 행복한 성탄절을 원해"
+        >
           안사님
         </CalenderContent>
-        <CalenderContent work={<Rett0_0tter1 />} id="Rett0_0tter1">
-          수달박사님-도윤인하
+        <CalenderContent
+          work={<Rett0_0tter1 />}
+          id="Rett0_0tter1"
+          title="수달박사님"
+        />
+        <CalenderContent
+          work={<Rett0_0tter2 />}
+          id="Rett0_0tter2"
+          title="기쁜 날"
+        >
+          수달박사님
         </CalenderContent>
-        <CalenderContent work={<Rett0_0tter2 />} id="Rett0_0tter2">
-          수달박사님-규혁도윤
-        </CalenderContent>
-        <CalenderContent work={<SR_D_BS3 />} id="SR_D_BS3">
-          꿈맛 시루떡님-베스타
+        <CalenderContent
+          work={<SR_D_BS3 />}
+          id="SR_D_BS3"
+          title="크리스마스의 기적"
+        >
+          꿈맛시루떡님
         </CalenderContent>
       </Calendar>
       <Image

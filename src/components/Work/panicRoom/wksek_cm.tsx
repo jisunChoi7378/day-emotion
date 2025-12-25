@@ -18,7 +18,7 @@ const Wksek_cm = () => {
     const handleScroll = () => {
       const currentScrollY = scrollContainer.scrollTop; // ✅ scrollTop 사용
 
-      if (currentScrollY > 100) {
+      if (currentScrollY > 260) {
         setCharacter("하은성, 하무열");
       }
     };

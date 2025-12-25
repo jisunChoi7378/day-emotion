@@ -27,19 +27,39 @@ const BlackRoomPage = () => {
         >
           이수님
         </CalenderContent>
-        <CalenderContent id="N1GHT_AND_D4WN" work={<N1GHT_AND_D4WN />}>
+        <CalenderContent
+          id="N1GHT_AND_D4WN"
+          work={<N1GHT_AND_D4WN />}
+          title="다시 첫번째 크리스마스"
+        >
           새벽님
         </CalenderContent>
-        <CalenderContent id="NeNggeul1" work={<NeNggeul1 />}>
-          넹글님-수혁수연
+        <CalenderContent
+          id="NeNggeul1"
+          work={<NeNggeul1 />}
+          title="아무도 없는 세상에서"
+        >
+          넹글님
         </CalenderContent>
-        <CalenderContent id="Chocobread_city2" work={<Chocobread_city2 />}>
-          깁미깁미님-수혁수연
+        <CalenderContent
+          id="Chocobread_city2"
+          work={<Chocobread_city2 />}
+          title="백화지원"
+        >
+          깁미깁미님
         </CalenderContent>
-        <CalenderContent id="Chocobread_city1" work={<Chocobread_city1 />}>
-          깁미깁미님-승범지은
+        <CalenderContent
+          id="Chocobread_city1"
+          work={<Chocobread_city1 />}
+          title="상사불망"
+        >
+          깁미깁미님
         </CalenderContent>
-        <CalenderContent id="Wksek_cm" work={<Wksek_cm />}>
+        <CalenderContent
+          id="Wksek_cm"
+          work={<Wksek_cm />}
+          title="첫 화이트 크리스마스"
+        >
           잔다님
         </CalenderContent>
       </Calendar>

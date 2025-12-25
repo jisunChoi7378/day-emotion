@@ -39,8 +39,10 @@ const CalenderContent = ({
         className={`cursor-pointer ${className}`}
         onClick={openCalendarContent}
       />
-      <p className="absolute md:top-26 md:left-15 top-25 left-15">{title}</p>
-      <div className="absolute text-xs md:top-32 md:left-15 top-31 left-15">
+      <p className="absolute md:top-26 md:left-15 top-25 left-15 pointer-events-none">
+        {title}
+      </p>
+      <div className="absolute text-xs md:top-32 md:left-15 top-31 left-15 pointer-events-none">
         {children}
       </div>
     </div>

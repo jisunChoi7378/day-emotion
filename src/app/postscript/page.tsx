@@ -6,11 +6,11 @@ import Image from "next/image";
 
 import Modal from "@/components/common/Modal";
 import EnvelopeButton from "@/components/common/EnvelopeButton";
-import { letters, type Letter } from "./letters";
-import { useOpenProfileModalStore } from "@/store/modal";
+import {letters, type Letter} from "./letters";
+import {useOpenProfileModalStore} from "@/store/modal";
 
 const PostscriptPage = () => {
-  const { open, close } = useOpenProfileModalStore();
+  const {open} = useOpenProfileModalStore();
   const handleDoorClick = () => {
     window.location.href = "/main";
   };
@@ -19,10 +19,10 @@ const PostscriptPage = () => {
     const content = (
       <div className="p-6 text-gray-900">
         <div className="min-h-[90vh] sm:min-h-0 flex flex-col items-center justify-center">
-          <div className="modal-paper mx-auto" style={{ maxWidth: 900 }}>
+          <div className="modal-paper mx-auto" style={{maxWidth: 900}}>
             <div
               className="modal-paper-bg"
-              style={{ backgroundImage: "url('/paper.jpg')" }}
+              style={{backgroundImage: "url('/paper.jpg')"}}
             >
               <div className="modal-paper-inner">
                 <h2 className="text-xl font-semibold text-gray-900">
@@ -40,16 +40,6 @@ const PostscriptPage = () => {
               </div>
             </div>
           </div>
-
-          <div className="mt-4 flex justify-center">
-            <button
-              aria-label="close letter"
-              className="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg border-2 border-green-800"
-              onClick={() => close()}
-            >
-              ✕
-            </button>
-          </div>
         </div>
       </div>
     );
@@ -58,7 +48,7 @@ const PostscriptPage = () => {
   };
 
   return (
-    <div className="px-6 py-8">
+    <div className="px-6 py-8 flex flex-col items-center">
       <Modal />
 
       <div className="flex items-center justify-between mb-6">
@@ -68,7 +58,7 @@ const PostscriptPage = () => {
       <p className="text-sm mb-4">산타의 선물에 보내온 답장을 열어볼까요?</p>
 
       <div className="max-w-[min(1500px,85vw)] mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-12 lg:gap-16 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 md:gap-25 justify-items-center">
           {letters.map((l) => (
             <div key={l.id} className="w-full flex justify-center">
               <EnvelopeButton
