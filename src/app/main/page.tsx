@@ -24,7 +24,9 @@ const MainPage = () => {
           className="drop-shadow-lg"
         />
       </div>
-      <p className="text-xl font-semibold">어떤 열쇠로 열어볼까?</p>
+      <p className="text-xl font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
+        어떤 열쇠로 열어볼까?
+      </p>
       <div className="flex flex-wrap items-center justify-center gap-6">
         {keys.map((key) => (
           <Link
@@ -43,9 +45,16 @@ const MainPage = () => {
       </div>
       <Link
         href="/postscript"
-        className="mt-4 rounded-lg bg-white/80 px-4 py-2 text-sm font-semibold text-slate-900 shadow hover:bg-white"
+        className="group mt-4 flex flex-col items-center transition-transform hover:scale-105 focus-visible:scale-105"
       >
-        후기 페이지로 이동
+        <Image
+          src="/present.png"
+          alt="후기 페이지로 이동"
+          width={84}
+          height={84}
+          className="drop-shadow-lg"
+        />
+        <span className="sr-only">후기 페이지로 이동</span>
       </Link>
     </div>
   );

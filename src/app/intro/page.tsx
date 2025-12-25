@@ -18,11 +18,11 @@ const dialogues = [
     text: "낯선 풍경에 상황을 파악하려 머리를 굴린다.\n…목적지와 다른 곳에 와 버린 것만 같다.",
     showSanta: true,
   },
-  { speaker: "", text: "탈출해야 한다.", showSanta: true },
+  { speaker: "", text: "탈출해야 한다.", showSanta: false },
   {
     speaker: "",
     text: "정신 차리자.\n밀실에 잡혀가도 정신만 차리면 산다고 했다.",
-    showSanta: true,
+    showSanta: false,
   },
   {
     speaker: "",

@@ -13,6 +13,8 @@ const Modal = forwardRef<HTMLDivElement, ProfileData>(
     const modalContentRef = useRef<HTMLDivElement>(null);
     const topRef = useRef<HTMLDivElement>(null!);
 
+    const isPostscriptModal = modalClass?.includes("no-modal-bg");
+
     const handleClose = () => {
       close();
     };
@@ -54,9 +56,21 @@ const Modal = forwardRef<HTMLDivElement, ProfileData>(
             X
           </div>
           {setWork ?? children ?? null}
-          <div onClick={goToTop} className="text-center mb-10 text-xl">
-            올라가기
-          </div>
+          {isPostscriptModal ? (
+            <div className="text-center mt-2 mb-8">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-red-600 text-white text-lg shadow-md"
+                onClick={handleClose}
+              >
+                ✕
+              </button>
+            </div>
+          ) : (
+            <div onClick={goToTop} className="text-center mb-10 text-xl">
+              올라가기
+            </div>
+          )}
         </div>
       </div>
     );
