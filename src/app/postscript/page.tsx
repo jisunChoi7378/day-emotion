@@ -8,6 +8,7 @@ import Modal from "@/components/common/Modal";
 import EnvelopeButton from "@/components/common/EnvelopeButton";
 import { letters, type Letter } from "./letters";
 import { useOpenProfileModalStore } from "@/store/modal";
+import TrueEndStory from "./TrueEndStory";
 
 const PostscriptPage = () => {
   const { open } = useOpenProfileModalStore();
@@ -48,8 +49,17 @@ const PostscriptPage = () => {
   };
 
   return (
-    <div className="px-6 py-8 flex flex-col items-center">
+    <div className="min-h-screen px-6 py-8 flex flex-col items-center">
       <Modal />
+
+      <Image
+        src="/love_is_an_open_door.png"
+        alt="돌아가는 문"
+        width={150}
+        height={150}
+        onClick={handleDoorClick}
+        className="mb-6"
+      />
 
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
@@ -75,13 +85,9 @@ const PostscriptPage = () => {
           ))}
         </div>
       </div>
-      <Image
-        src="/love_is_an_open_door.png"
-        alt="돌아가는 문"
-        width={150}
-        height={150}
-        onClick={handleDoorClick}
-      />
+      <div className="mt-auto w-full flex flex-col items-center gap-4 pt-10">
+        <TrueEndStory triggerImageSrc="/door_light.png" />
+      </div>
     </div>
   );
 };
