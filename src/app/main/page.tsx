@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import PostscriptStory from "./PostscriptStory";
 
 const keys = [
   { label: "검은방", href: "/black-room", src: "/main_key1.png" },
@@ -43,19 +44,7 @@ const MainPage = () => {
           </Link>
         ))}
       </div>
-      <Link
-        href="/postscript"
-        className="group mt-4 flex flex-col items-center transition-transform hover:scale-105 focus-visible:scale-105"
-      >
-        <Image
-          src="/present.png"
-          alt="후기 페이지로 이동"
-          width={84}
-          height={84}
-          className="drop-shadow-lg"
-        />
-        <span className="sr-only">후기 페이지로 이동</span>
-      </Link>
+      <PostscriptStory />
     </div>
   );
 };

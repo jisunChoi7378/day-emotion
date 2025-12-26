@@ -187,7 +187,19 @@ const IntroPage = () => {
         <div className="text-base leading-relaxed whitespace-pre-line flex-1 overflow-y-auto pr-1">
           {renderWithHighlight(displayText)}
         </div>
-        <div className="pt-2 text-right text-xs text-white/60">탭하여 다음</div>
+        <div className="pt-2 flex justify-end items-center gap-3 text-xs text-white/60">
+          <span>탭하여 다음</span>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              router.push("/main");
+            }}
+            className="rounded-md border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white/90 shadow hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60"
+          >
+            건너뛰기
+          </button>
+        </div>
       </div>
     </div>
   );
